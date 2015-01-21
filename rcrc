@@ -1,0 +1,2 @@
+# Configuration for rcm
+EXCLUDES="README.md resources"

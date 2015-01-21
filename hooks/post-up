@@ -1,0 +1,13 @@
+#!/bin/zsh
+
+if [ ! -e $HOME/.vim/bundle/Vundle.vim ]; then
+    git clone https://github.com/gmarik/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
+fi
+
+#vim -u $HOME/.vimrc.bundles +BundleInstall +qa
+vim +PluginInstall +qall
+
+setopt EXTENDED_GLOB;
+for rcfile in ${ZDOTDIR:-$HOME}/.dotfiles/zprezto/runcoms/^README.md(.N); do
+    ln -sf "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}";
+done
