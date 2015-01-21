@@ -15,9 +15,16 @@ set laststatus=2      " Always display the status line
 " Color Configuration
 syntax on
 set background=dark
+let base16colorspace=256
 colorscheme base16-tomorrow
 
+" Airline
+let g:airline_powerline_fonts = 1
+set t_Co=256
+
 " Setup
+set noshowmode
+set timeoutlen=50
 set encoding=utf-8
 
 " Local Configuration
