@@ -39,11 +39,11 @@ set bsdir=last        " Last working directory is default working directory
 syntax on                     " Use syntax coloring
 set background=dark           " Dark colorscheme
 let base16colorspace=256      " Use 256 colors
+set t_Co=256                  " Use 256 colors
 colorscheme base16-tomorrow   " Colorscheme
 
 " Airline
 let g:airline_powerline_fonts = 1 " Use powerline fonts
-set t_Co=256                      " Use 256 colors
 
 " Local Configuration
 if filereadable($HOME . "/.vimrc.local")
