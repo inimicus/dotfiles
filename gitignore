@@ -22,3 +22,7 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+# Xcode personal settings
+xcuserdata
+
+
