@@ -1,3 +1,4 @@
 # Configuration for rcm
 EXCLUDES="README.md resources"
 COPY_ALWAYS="hushlogin"
+SYMLINK_DIRS="zprezto"
