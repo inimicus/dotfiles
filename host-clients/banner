@@ -1,0 +1,36 @@
+
+clear
+
+bold=`tput bold`
+normal=`tput sgr0`
+white=`tput setaf 7`
+
+echo "${bold}${white}"
+echo " MMMMMMMM                     MMMMMMM           CCCCCCCCCC"
+echo "    MMMMMM                   MMMMM           CCCCCCCCCCCCCCCC"
+echo "     MMMMMM                 MMMMM         CCCCC            CCCCC"
+echo "     MMMMMMM               MMMMMM       CCCCC                 CC"
+echo "     MM  MMMM             MM  MMM     CCCC"
+echo "     MM   MMMM           MM   MMM    CCCC"
+echo "     MM    MMMM         MM    MMM    CCCC"
+echo "     MM     MMMM       MM     MMM    CCCC"
+echo "     MM      MMMM     MM      MMM    CCCC"
+echo "     MM       MMMM   MM       MMM     CCCC"
+echo "     MM        MMMM MM        MMM      CCCCC                  CC"
+echo "     MM         MMMMM         MMMM       CCCCC             CCCCC"
+echo "    MMMM         MMM         MMMMMM         CCCCCCCCCCCCCCCCC"
+echo " MMMMMMMMMM       M        MMMMMMMMMMM         CCCCCCCCCCC"
+echo
+echo "${normal}${white}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+echo
+echo "    ${bold}STATISTICS${normal}"
+
+df -h -x tmpfs -x udev -x devtmpfs | tail -n 1 | awk '{print "    Disk:      "$3" of "$2" ("$5" Full)"     }'
+
+vmstat -s | head -n 2 | sed -e 's/ \{2,\}//g' -e 's/ K total memory//g' -e 's/ K used memory//g' | tr '\n' '\t' | awk -F \\t '{print "    Memory:    " sprintf("%.0f", $2 / 1024) "M of " expr $1 / 1024  "M (" sprintf("%.0f", $2 / $1 * 100) "% Used)"}'
+
+cat /proc/loadavg | awk '{print "    Load:      "$1,$2,$3}'
+echo
+echo "${normal}${white}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+echo "${normal}"
+
