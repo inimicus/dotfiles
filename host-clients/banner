@@ -3,13 +3,14 @@ clear
 
 bold=`tput bold`
 normal=`tput sgr0`
+orange=`tput setaf 166`
 white=`tput setaf 7`
 
-echo "${bold}${white}"
-echo " MMMMMMMM                     MMMMMMM           CCCCCCCCCC"
-echo "    MMMMMM                   MMMMM           CCCCCCCCCCCCCCCC"
-echo "     MMMMMM                 MMMMM         CCCCC            CCCCC"
-echo "     MMMMMMM               MMMMMM       CCCCC                 CC"
+echo "${bold}${orange}"
+echo " MMMMMMMM                     MMMMMMM          CCCCCCCCCCC"
+echo "    MMMMMM                   MMMMM          CCCCCCCCCCCCCCCCC"
+echo "     MMMMMM                 MMMMM        CCCCC             CCCCC"
+echo "     MMMMMMM               MMMMMM      CCCCC                  CC"
 echo "     MM  MMMM             MM  MMM     CCCC"
 echo "     MM   MMMM           MM   MMM    CCCC"
 echo "     MM    MMMM         MM    MMM    CCCC"
@@ -21,9 +22,9 @@ echo "     MM         MMMMM         MMMM       CCCCC             CCCCC"
 echo "    MMMM         MMM         MMMMMM         CCCCCCCCCCCCCCCCC"
 echo " MMMMMMMMMM       M        MMMMMMMMMMM         CCCCCCCCCCC"
 echo
-echo "${normal}${white}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+echo "${normal}${orange}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
 echo
-echo "    ${bold}STATISTICS${normal}"
+echo "    ${white}${bold}STATISTICS${normal}${white}"
 
 df -h -x tmpfs -x udev -x devtmpfs | tail -n 1 | awk '{print "    Disk:      "$3" of "$2" ("$5" Full)"     }'
 
@@ -31,6 +32,6 @@ vmstat -s | head -n 2 | sed -e 's/ \{2,\}//g' -e 's/ K total memory//g' -e 's/ K
 
 cat /proc/loadavg | awk '{print "    Load:      "$1,$2,$3}'
 echo
-echo "${normal}${white}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+echo "${normal}${orange}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
 echo "${normal}"
 
