@@ -17,6 +17,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-scripts/tComment'
 Plugin 'vim-scripts/ctags.vim'
+Plugin 'groenewege/vim-less'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
