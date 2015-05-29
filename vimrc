@@ -5,6 +5,10 @@ if filereadable($HOME . "/.vimrc.bundles")
   source $HOME/.vimrc.bundles
 endif
 
+" Commands
+set wildmenu                " Show tab completion options
+set wildmode=list:longest   " Similar to shell matching
+
 " Line Numbers
 set number            " Show line numbers
 set numberwidth=5     " Line numbers up to 5 characters
