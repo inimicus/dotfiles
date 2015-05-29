@@ -33,6 +33,10 @@ set lazyredraw        " Don't redraw while executing macros
 set ai                " Auto indent
 set si                " Smart indent
 
+" Searching
+set hlsearch          " Highlight search results
+set incsearch         " Dynamically as typed
+
 " OS X Ten Key
 map <Esc>Oq 1
 map <Esc>Or 2
