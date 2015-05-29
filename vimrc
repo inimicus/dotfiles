@@ -23,6 +23,7 @@ set laststatus=2      " Always display the status line
 
 " Editing
 set tabstop=4         " Column size of tabs
+set hidden            " Enable background buffer
 set expandtab         " Tabs as spaces
 set softtabstop=4     " Colums of tabs in insert mode
 set shiftwidth=4      " Columns to indent by
