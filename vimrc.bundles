@@ -20,6 +20,7 @@ Plugin 'vim-scripts/ctags.vim'
 Plugin 'groenewege/vim-less'
 Plugin 'evidens/vim-twig'
 Plugin 'fidian/hexmode'
+Plugin 'Valloric/YouCompleteMe'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
