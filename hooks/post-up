@@ -12,7 +12,9 @@ for rcfile in ${ZDOTDIR:-$HOME}/.dotfiles/zprezto/runcoms/^README.md(.N); do
     ln -sf "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}";
 done
 
-if [ -e $HOME/.vim/bundle/YouCompleteMe/install.sh ]; then
-    $HOME/.vim/bundle/YouCompleteMe/install.sh --clang-completer
+if [ ! -e $HOME/.vim/bundle/YouCompleteMe/third_party/ycmd/ycm_client_support.so ]; then
+    if [ -e $HOME/.vim/bundle/YouCompleteMe/install.sh ]; then
+        $HOME/.vim/bundle/YouCompleteMe/install.sh --clang-completer
+    fi
 fi
 
