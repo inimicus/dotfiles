@@ -1,31 +1,41 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
+" ==============================================================================
+" VIM BUNDLES/PLUGINS CONFIGURATION
+" ==============================================================================
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" ------------------------------------------------------------------------------
+" Setup Vundle
+" ------------------------------------------------------------------------------
+set nocompatible                    " Use VIM (Required)
+filetype off                        " Required for Vundle setup
+set rtp+=~/.vim/bundle/Vundle.vim   " Set runtime path
+call vundle#begin()                 " Initalize Vundle
+Plugin 'gmarik/Vundle.vim'          " Let Vundle manage Vundle
 
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+" ------------------------------------------------------------------------------
+" Plugins List (Via Github Repos)
+" ------------------------------------------------------------------------------
+Plugin 'bling/vim-airline'          " Lightweight Powerline for VIM
+Plugin 'tmhedberg/matchit'          " Matching tags
+Plugin 'scrooloose/nerdtree'        " File browser/manager
+Plugin 'chriskempson/base16-vim'    " Colorschemes
+Plugin 'tpope/vim-fugitive'         " Git plugin
+Plugin 'tpope/vim-surround'         " Surrounding tags
+Plugin 'vim-scripts/tComment'       " Bulk comment toggling
+Plugin 'vim-scripts/ctags.vim'      " Tag indexing
+Plugin 'groenewege/vim-less'        " Less syntax mode
+Plugin 'evidens/vim-twig'           " Twig syntax mode
+Plugin 'fidian/hexmode'             " View/edit hex files
+Plugin 'Valloric/YouCompleteMe'     " Autocompletion (tab complete)
 
-" Define bundles via Github repos
-Plugin 'bling/vim-airline'
-Plugin 'tmhedberg/matchit'
-Plugin 'scrooloose/nerdtree'
-Plugin 'chriskempson/base16-vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-surround'
-Plugin 'vim-scripts/tComment'
-Plugin 'vim-scripts/ctags.vim'
-Plugin 'groenewege/vim-less'
-Plugin 'evidens/vim-twig'
-Plugin 'fidian/hexmode'
-Plugin 'Valloric/YouCompleteMe'
+" ------------------------------------------------------------------------------
+" End List, Run
+" ------------------------------------------------------------------------------
+call vundle#end()                   " Required
+filetype plugin indent on           " Required
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-
+" ------------------------------------------------------------------------------
+" Additional Information
+" ------------------------------------------------------------------------------
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
 
