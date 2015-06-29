@@ -33,6 +33,9 @@ set lazyredraw        " Don't redraw while executing macros
 set ai                " Auto indent
 set si                " Smart indent
 
+" YouCompleteMe Settings
+let g:ycm_key_list_select_completion = ['<TAB>', '<Down>', '<Enter']
+
 " Searching
 set hlsearch          " Highlight search results
 set incsearch         " Dynamically as typed
