@@ -342,7 +342,7 @@
 	<key>MaxVertically</key>
 	<false/>
 	<key>NSColorPanelMode</key>
-	<string>7</string>
+	<string>6</string>
 	<key>NSFontPanelAttributes</key>
 	<string>1, 0</string>
 	<key>NSNavLastRootDirectory</key>
@@ -378,9 +378,11 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>2049 110 445 248 0 0 2560 1417 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>450 589 924 485 0 0 2560 1417 </string>
+	<string>1094 507 924 485 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>956 659 730 520 0 0 2560 1417 </string>
+	<string>0 4 2340 1413 0 0 2560 1417 </string>
+	<key>NSWindow Frame iTerm Window 1</key>
+	<string>1133 402 730 520 0 0 2560 1417 </string>
 	<key>NeverWarnAboutShortLivedSessions_F6463331-7E4B-48D0-9D68-66CBCE1A45B8</key>
 	<true/>
 	<key>New Bookmarks</key>
@@ -944,11 +946,11 @@
 			<key>Right Option Key Sends</key>
 			<integer>0</integer>
 			<key>Rows</key>
-			<integer>26</integer>
+			<integer>27</integer>
 			<key>Screen</key>
 			<integer>-1</integer>
 			<key>Scrollback Lines</key>
-			<integer>1000</integer>
+			<integer>0</integer>
 			<key>Scrollback With Status Bar</key>
 			<false/>
 			<key>Scrollback in Alternate Screen</key>
@@ -1092,7 +1094,7 @@
 			<key>Triggers</key>
 			<array/>
 			<key>Unlimited Scrollback</key>
-			<false/>
+			<true/>
 			<key>Use Bold Font</key>
 			<true/>
 			<key>Use Bright Bold</key>
@@ -1114,7 +1116,7 @@
 	<key>NoSyncTimeOfLastPromo</key>
 	<real>453333193.14156902</real>
 	<key>NoSyncTimeOfLastPromoDownload</key>
-	<real>454541818.19893098</real>
+	<real>457547448.75641602</real>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
 	<key>OpenArrangementAtStartup</key>
@@ -1179,7 +1181,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2015-05-28T21:36:52Z</date>
+	<date>2015-07-02T16:27:16Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
