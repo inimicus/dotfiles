@@ -46,6 +46,12 @@ set ai                      " Auto indent
 set si                      " Smart indent
 
 " ------------------------------------------------------------------------------
+" EditorConfig Settings
+" ------------------------------------------------------------------------------
+let g:EditorConfig_exclude_patterns = ['fugitive://.*'] " Be nice to Fugitive
+let g:EditorConfig_exclude_patterns = ['scp://.*']      " Nothing over SSH
+
+" ------------------------------------------------------------------------------
 " YouCompleteMe Settings
 " ------------------------------------------------------------------------------
 let g:ycm_key_list_select_completion = ['<TAB>', '<Down>', '<Enter']
