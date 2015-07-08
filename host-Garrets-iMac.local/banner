@@ -1,0 +1,46 @@
+#!/bin/zsh
+
+clear
+
+megs=$[1024*1024]
+gigs=$[1024*1024*1024]
+
+vmstat=$(vm_stat)
+pageSize=$(sed -nE 's/.*page size of ([0-9]+) bytes.*/\1/p' <<< "$vmstat")
+pagesActive=$(sed -nE 's/.*Pages active: +([0-9]+)\./\1/p' <<< "$vmstat")
+pagesWired=$(sed -nE 's/.*Pages wired down: +([0-9]+)\./\1/p' <<< "$vmstat")
+pagesUsed=$[$pagesActive+$pagesWired]
+memUsed=$(printf %0.2f $[$pagesUsed*$pageSize/$megs])
+memTotal=$(printf %0.2f $[$(sysctl -n hw.memsize)/$megs])
+memPercent=$(printf %d $[$memUsed/$memTotal*100])
+
+rootVolume=$(df -H | grep -E "\/$" | awk '{print $3 " of " $2 " (" $5 " Full)"}')
+load=$(sysctl -n vm.loadavg | sed -nE 's/\{ | \}//gp')
+
+bold=`tput bold`
+normal=`tput sgr0`
+green=`tput setaf 2`
+white=`tput setaf 7`
+dim=`tput dim`
+
+#echo "${green}${bold}                                                       ."
+echo "${green}${bold}                                                     .o8"
+echo "   .oooooooo  .oooo.   oooo d8b oooo d8b  .ooooo.  .o888oo"
+echo "  888' \`88b  \`P  )88b  \`888\"\"8P \`888\"\"8P d88' \`88b   888"
+echo "  888   888   .oP\"888   888      888     888ooo888   888"
+echo "  \`88bod8P'  d8(  888   888      888     888    .o   888 ."
+echo "  \`8oooooo.  \`Y888\"\"8o d888b    d888b    \`Y8bod8P'   \"888\""
+echo "  d\"     YD"
+echo "  \"Y88888P'  ${white}============================================="
+echo
+echo "      STATISTICS${normal}"
+echo "      Disk:     ${rootVolume}"
+echo "      Memory:   $(printf %d ${memUsed})M of $(printf %d ${memTotal})M (${memPercent}% Used)"
+echo "      Load:     ${load}"
+#echo "      Wired:\t"$[$pagesWired*$pageSize/$megs]
+#echo "      Free:\t"$[$pagesFree*$pageSize/$megs]
+#echo "      Active:\t"$[$pagesActive*$pageSize/$megs]
+#echo "      Inactive:\t"$[$pagesInactive*$pageSize/$megs]
+echo
+echo "  ${bold}========================================================"
+echo
