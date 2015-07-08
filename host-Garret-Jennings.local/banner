@@ -1,5 +1,21 @@
+#!/bin/zsh
 
 clear
+
+megs=$[1024*1024]
+gigs=$[1024*1024*1024]
+
+vmstat=$(vm_stat)
+pageSize=$(sed -nE 's/.*page size of ([0-9]+) bytes.*/\1/p' <<< "$vmstat")
+pagesActive=$(sed -nE 's/.*Pages active: +([0-9]+)\./\1/p' <<< "$vmstat")
+pagesWired=$(sed -nE 's/.*Pages wired down: +([0-9]+)\./\1/p' <<< "$vmstat")
+pagesUsed=$[$pagesActive+$pagesWired]
+memUsed=$(printf %0.2f $[$pagesUsed*$pageSize/$megs])
+memTotal=$(printf %0.2f $[$(sysctl -n hw.memsize)/$megs])
+memPercent=$(printf %d $[$memUsed/$memTotal*100])
+
+rootVolume=$(df -H | grep -E "\/$" | awk '{print $3 " of " $2 " (" $5 " Full)"}')
+load=$(sysctl -n vm.loadavg | sed -nE 's/\{ | \}//gp')
 
 bold=`tput bold`
 normal=`tput sgr0`
@@ -8,17 +24,40 @@ white=`tput setaf 7`
 dim=`tput dim`
 
 echo "${yellow}${bold}"
-echo "      \$\$\$\$\$${white}\\${yellow}                               \$\$${white}\\${yellow}"
-echo "      ${white}\\__${yellow}\$\$ ${white}|                              \\__|${yellow}"
-echo "         \$\$ ${white}|${yellow} \$\$\$\$\$\$${white}\\${yellow}  \$\$\$\$\$\$\$${white}\\${yellow}  \$\$\$\$\$\$\$${white}\\${yellow}  \$\$${white}\\${yellow} \$\$\$\$\$\$\$${white}\\${yellow}   \$\$\$\$\$\$${white}\\${yellow}   \$\$\$\$\$\$\$${white}\\${yellow}"
-echo "         \$\$ ${white}|${yellow}\$\$  ${white}__${yellow}\$\$${white}\\${yellow} \$\$  ${white}__${yellow}\$\$${white}\\${yellow} \$\$  ${white}__${yellow}\$\$${white}\\${yellow} \$\$ ${white}|${yellow}\$\$  ${white}__${yellow}\$\$${white}\\${yellow} \$\$  ${white}__${yellow}\$\$${white}\\${yellow} \$\$  ${white}_____|${yellow}"
-echo "   \$\$${white}\\${yellow}   \$\$ ${white}|${yellow}\$\$\$\$\$\$\$\$ ${white}|${yellow}\$\$ ${white}|${yellow}  \$\$ ${white}|${yellow}\$\$ ${white}|${yellow}  \$\$ ${white}|${yellow}\$\$ ${white}|${yellow}\$\$ ${white}|${yellow}  \$\$ ${white}|${yellow}\$\$ ${white}/${yellow}  \$\$ ${white}|\\${yellow}\$\$\$\$\$\$${white}\\${yellow}"
-echo "   \$\$ ${white}|${yellow}  \$\$ ${white}|${yellow}\$\$   ${white}____|${yellow}\$\$ ${white}|${yellow}  \$\$ ${white}|${yellow}\$\$ ${white}|${yellow}  \$\$ ${white}|${yellow}\$\$ ${white}|${yellow}\$\$ ${white}|${yellow}  \$\$ ${white}|${yellow}\$\$ ${white}|${yellow}  \$\$ ${white}| \\____${yellow}\$\$${white}\\${yellow}"
-echo "   ${white}\\${yellow}\$\$\$\$\$\$  ${white}|\\${yellow}\$\$\$\$\$\$\$${white}\\${yellow} \$\$ ${white}|${yellow}  \$\$ ${white}|${yellow}\$\$ ${white}|${yellow}  \$\$ ${white}|${yellow}\$\$ ${white}|${yellow}\$\$ ${white}|${yellow}  \$\$ ${white}|\\${yellow}\$\$\$\$\$\$\$ ${white}|${yellow}\$\$\$\$\$\$\$  ${white}|${yellow}"
-echo "    ${white}\\______/  \\_______|\\__|  \\__|\\__|  \\__|\\__|\\__|  \\__| \\____${yellow}\$\$ ${white}|\\_______/${yellow}"
-echo "                                                         \$\$${white}\\${yellow}   \$\$${white} |${yellow}"
-echo "                                                         ${white}\\${yellow}\$\$\$\$\$\$  ${white}|"
-echo "                                                          \______/${normal}"
+echo "     oooo                                    o8o"
+echo "     \`888                                    \`\"'"
+echo "      888  .ooooo.  ooo. .oo.   ooo. .oo.   oooo  ooo. .oo.    .oooooooo  .oooo.o"
+echo "      888 d88' \`88b \`888P\"Y88b  \`888P\"Y88b  \`888  \`888P\"Y88b  888' \`88b  d88(  \"8"
+echo "      888 888ooo888  888   888   888   888   888   888   888  888   888  \`\"Y88b."
+echo "      888 888    .o  888   888   888   888   888   888   888  \`88bod8P'  o.  )88b"
+echo "  .o. 888 \`Y8bod8P' o888o o888o o888o o888o o888o o888o o888o \`8oooooo.  8\"\"888P'"
+echo "  888.888                                                     d\"     YD"
+echo "  \`Y888P  ${white}==================================================  ${yellow}\"Y88888P'  ${white}========"
+echo
+echo "      ${white}STATISTICS${normal}${white}"
+echo "      Disk:     ${rootVolume}"
+echo "      Memory:   $(printf %d ${memUsed})M of $(printf %d ${memTotal})M (${memPercent}% Used)"
+echo "      Load:     ${load}"
+#echo "      Wired:\t"$[$pagesWired*$pageSize/$megs]
+#echo "      Free:\t"$[$pagesFree*$pageSize/$megs]
+#echo "      Active:\t"$[$pagesActive*$pageSize/$megs]
+#echo "      Inactive:\t"$[$pagesInactive*$pageSize/$megs]
+echo
+echo "  ${white}${bold}==============================================================================="
+echo
+
+#echo "${yellow}${bold}"
+#echo "      \$\$\$\$\$${white}\\${yellow}                               \$\$${white}\\${yellow}"
+#echo "      ${white}\\__${yellow}\$\$ ${white}|                              \\__|${yellow}"
+#echo "         \$\$ ${white}|${yellow} \$\$\$\$\$\$${white}\\${yellow}  \$\$\$\$\$\$\$${white}\\${yellow}  \$\$\$\$\$\$\$${white}\\${yellow}  \$\$${white}\\${yellow} \$\$\$\$\$\$\$${white}\\${yellow}   \$\$\$\$\$\$${white}\\${yellow}   \$\$\$\$\$\$\$${white}\\${yellow}"
+#echo "         \$\$ ${white}|${yellow}\$\$  ${white}__${yellow}\$\$${white}\\${yellow} \$\$  ${white}__${yellow}\$\$${white}\\${yellow} \$\$  ${white}__${yellow}\$\$${white}\\${yellow} \$\$ ${white}|${yellow}\$\$  ${white}__${yellow}\$\$${white}\\${yellow} \$\$  ${white}__${yellow}\$\$${white}\\${yellow} \$\$  ${white}_____|${yellow}"
+#echo "   \$\$${white}\\${yellow}   \$\$ ${white}|${yellow}\$\$\$\$\$\$\$\$ ${white}|${yellow}\$\$ ${white}|${yellow}  \$\$ ${white}|${yellow}\$\$ ${white}|${yellow}  \$\$ ${white}|${yellow}\$\$ ${white}|${yellow}\$\$ ${white}|${yellow}  \$\$ ${white}|${yellow}\$\$ ${white}/${yellow}  \$\$ ${white}|\\${yellow}\$\$\$\$\$\$${white}\\${yellow}"
+#echo "   \$\$ ${white}|${yellow}  \$\$ ${white}|${yellow}\$\$   ${white}____|${yellow}\$\$ ${white}|${yellow}  \$\$ ${white}|${yellow}\$\$ ${white}|${yellow}  \$\$ ${white}|${yellow}\$\$ ${white}|${yellow}\$\$ ${white}|${yellow}  \$\$ ${white}|${yellow}\$\$ ${white}|${yellow}  \$\$ ${white}| \\____${yellow}\$\$${white}\\${yellow}"
+#echo "   ${white}\\${yellow}\$\$\$\$\$\$  ${white}|\\${yellow}\$\$\$\$\$\$\$${white}\\${yellow} \$\$ ${white}|${yellow}  \$\$ ${white}|${yellow}\$\$ ${white}|${yellow}  \$\$ ${white}|${yellow}\$\$ ${white}|${yellow}\$\$ ${white}|${yellow}  \$\$ ${white}|\\${yellow}\$\$\$\$\$\$\$ ${white}|${yellow}\$\$\$\$\$\$\$  ${white}|${yellow}"
+#echo "    ${white}\\______/  \\_______|\\__|  \\__|\\__|  \\__|\\__|\\__|  \\__| \\____${yellow}\$\$ ${white}|\\_______/${yellow}"
+#echo "                                                         \$\$${white}\\${yellow}   \$\$${white} |${yellow}"
+#echo "                                                         ${white}\\${yellow}\$\$\$\$\$\$  ${white}|"
+#echo "                                                          \______/${normal}"
 #echo
 #echo "${normal}${bold}################################################################################${normal}"
 #echo

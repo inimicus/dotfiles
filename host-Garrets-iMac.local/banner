@@ -21,10 +21,10 @@ bold=`tput bold`
 normal=`tput sgr0`
 green=`tput setaf 2`
 white=`tput setaf 7`
-dim=`tput dim`
 
-#echo "${green}${bold}                                                       ."
-echo "${green}${bold}                                                     .o8"
+echo "${green}${bold}"
+echo "                                                       ."
+echo "                                                     .o8"
 echo "   .oooooooo  .oooo.   oooo d8b oooo d8b  .ooooo.  .o888oo"
 echo "  888' \`88b  \`P  )88b  \`888\"\"8P \`888\"\"8P d88' \`88b   888"
 echo "  888   888   .oP\"888   888      888     888ooo888   888"

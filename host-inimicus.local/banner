@@ -1,14 +1,46 @@
+#!/bin/zsh
 
 clear
+
+megs=$[1024*1024]
+gigs=$[1024*1024*1024]
+
+vmstat=$(vm_stat)
+pageSize=$(sed -nE 's/.*page size of ([0-9]+) bytes.*/\1/p' <<< "$vmstat")
+pagesActive=$(sed -nE 's/.*Pages active: +([0-9]+)\./\1/p' <<< "$vmstat")
+pagesWired=$(sed -nE 's/.*Pages wired down: +([0-9]+)\./\1/p' <<< "$vmstat")
+pagesUsed=$[$pagesActive+$pagesWired]
+memUsed=$(printf %0.2f $[$pagesUsed*$pageSize/$megs])
+memTotal=$(printf %0.2f $[$(sysctl -n hw.memsize)/$megs])
+memPercent=$(printf %d $[$memUsed/$memTotal*100])
+
+rootVolume=$(df -H | grep -E "\/$" | awk '{print $3 " of " $2 " (" $5 " Full)"}')
+load=$(sysctl -n vm.loadavg | sed -nE 's/\{ | \}//gp')
 
 bold=`tput bold`
 normal=`tput sgr0`
 red=`tput setaf 1`
 white=`tput setaf 7`
 
-echo "${bold}${red}  _       _           _"
-echo " (_)_ __ (_)_ __ ___ (_) ___ _   _ ___" 
-echo " | | '_ \\| | '_ \` _ \\| |/ __| | | / __|"
-echo " | | | | | | | | | | | | (__| |_| \\__ \\"
-echo " |_|_| |_|_|_| |_| |_|_|\\___|\\__,_|___/"
-echo "${white}________________________________________${normal}"
+echo "${red}${bold}"
+echo "   o8o               o8o                     o8o"
+echo "   \`\"'               \`\"'                     \`\"'"
+echo "  oooo  ooo. .oo.   oooo  ooo. .oo.  .oo.   oooo   .ooooo.  oooo  oooo   .oooo.o"
+echo "  \`888  \`888P\"Y88b  \`888  \`888P\"Y88bP\"Y88b  \`888  d88' \`\"Y8 \`888  \`888  d8P' \`Y8"
+echo "   888   888   888   888   888   888   888   888  888        888   888  Y88o."
+echo "   888   888   888   888   888   888   888   888  888   .o8  888   888   \`\"Y88b."
+echo "  o888o o888o o888o o888o o888o o888o o888o o888o \`Y8bod8P'  \`V88V\"V8P'    \`\"88b"
+echo "                                                                        oo  .88P"
+echo "  ${white}====================================================================${red}  8\"\"888P'"
+echo
+echo "      ${white}STATISTICS${normal}${white}"
+echo "      Disk:     ${rootVolume}"
+echo "      Memory:   $(printf %d ${memUsed})M of $(printf %d ${memTotal})M (${memPercent}% Used)"
+echo "      Load:     ${load}"
+#echo "      Wired:\t"$[$pagesWired*$pageSize/$megs]
+#echo "      Free:\t"$[$pagesFree*$pageSize/$megs]
+#echo "      Active:\t"$[$pagesActive*$pageSize/$megs]
+#echo "      Inactive:\t"$[$pagesInactive*$pageSize/$megs]
+echo
+echo "${white}${bold}  =============================================================================="
+echo
