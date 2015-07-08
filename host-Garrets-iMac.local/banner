@@ -33,7 +33,7 @@ echo "  \`8oooooo.  \`Y888\"\"8o d888b    d888b    \`Y8bod8P'   \"888\""
 echo "  d\"     YD"
 echo "  \"Y88888P'  ${white}============================================="
 echo
-echo "      STATISTICS${normal}"
+echo "      ${white}STATISTICS${normal}${white}"
 echo "      Disk:     ${rootVolume}"
 echo "      Memory:   $(printf %d ${memUsed})M of $(printf %d ${memTotal})M (${memPercent}% Used)"
 echo "      Load:     ${load}"
@@ -42,5 +42,5 @@ echo "      Load:     ${load}"
 #echo "      Active:\t"$[$pagesActive*$pageSize/$megs]
 #echo "      Inactive:\t"$[$pagesInactive*$pageSize/$megs]
 echo
-echo "  ${bold}========================================================"
+echo "  ${white}${bold}========================================================"
 echo
