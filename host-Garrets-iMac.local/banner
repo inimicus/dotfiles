@@ -35,7 +35,7 @@ echo "  \"Y88888P'  ${white}============================================="
 echo
 echo "      ${white}STATISTICS${normal}${white}"
 echo "      Disk:     ${rootVolume}"
-echo "      Memory:   $(printf %d ${memUsed})M of $(printf %d ${memTotal})M (${memPercent}% Used)"
+command printf "      Memory:   %'0.fM of %'0.fM (%d%% Used)\n" $memUsed $memTotal $memPercent
 echo "      Load:     ${load}"
 #echo "      Wired:\t"$[$pagesWired*$pageSize/$megs]
 #echo "      Free:\t"$[$pagesFree*$pageSize/$megs]
