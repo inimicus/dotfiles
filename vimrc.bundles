@@ -25,8 +25,14 @@ Plugin 'vim-scripts/ctags.vim'          " Tag indexing
 Plugin 'groenewege/vim-less'            " Less syntax mode
 Plugin 'evidens/vim-twig'               " Twig syntax mode
 Plugin 'fidian/hexmode'                 " View/edit hex files
-Plugin 'Valloric/YouCompleteMe'         " Autocompletion (tab complete)
 Plugin 'editorconfig/editorconfig-vim'  " EditorConfig plugin
+
+" ------------------------------------------------------------------------------
+" Local Plugins
+" ------------------------------------------------------------------------------
+if filereadable($HOME . "/.vimrc.bundles.local")
+    source $HOME/.vimrc.bundles.local
+endif
 
 " ------------------------------------------------------------------------------
 " End List, Run

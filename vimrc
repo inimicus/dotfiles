@@ -6,7 +6,7 @@
 " Vundle
 " ------------------------------------------------------------------------------
 if filereadable($HOME . "/.vimrc.bundles")
-  source $HOME/.vimrc.bundles
+    source $HOME/.vimrc.bundles
 endif
 
 " ------------------------------------------------------------------------------
@@ -127,6 +127,6 @@ map! <Esc>OM <CR>
 " Local Configuration
 " ------------------------------------------------------------------------------
 if filereadable($HOME . "/.vimrc.local")
-  source $HOME/.vimrc.local
+    source $HOME/.vimrc.local
 endif
 
