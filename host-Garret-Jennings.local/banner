@@ -44,7 +44,7 @@ echo "      Load:     ${load}"
 #echo "      Inactive:\t"$[$pagesInactive*$pageSize/$megs]
 echo
 echo "  ${white}${bold}==============================================================================="
-echo
+echo "${normal}"
 
 #echo "${yellow}${bold}"
 #echo "      \$\$\$\$\$${white}\\${yellow}                               \$\$${white}\\${yellow}"
