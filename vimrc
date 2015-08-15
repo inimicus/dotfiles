@@ -9,7 +9,7 @@ if filereadable($HOME . "/.vimrc.bundles")
     source $HOME/.vimrc.bundles
 endif
 
-" ------------------------------------------------------------------------------
+
 " Commands
 " ------------------------------------------------------------------------------
 set wildmenu                " Show tab completion options
@@ -56,6 +56,21 @@ let g:EditorConfig_exclude_patterns = ['scp://.*']      " Nothing over SSH
 " ------------------------------------------------------------------------------
 let g:ycm_key_list_select_completion = ['<TAB>', '<Down>', '<Enter']
 
+" ------------------------------------------------------------------------------
+" Indent Guides
+" ------------------------------------------------------------------------------
+let g:indent_guides_guide_size = 1
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=18
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=18
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_start_level = 2
+  
+" ------------------------------------------------------------------------------
+" Searching
+" ------------------------------------------------------------------------------
+let g:indent_guides_guide_size = 1
+  
 " ------------------------------------------------------------------------------
 " Searching
 " ------------------------------------------------------------------------------

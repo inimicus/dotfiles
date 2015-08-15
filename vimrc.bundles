@@ -14,18 +14,19 @@ Plugin 'gmarik/Vundle.vim'          " Let Vundle manage Vundle
 " ------------------------------------------------------------------------------
 " Plugins List (Via Github Repos)
 " ------------------------------------------------------------------------------
-Plugin 'bling/vim-airline'              " Lightweight Powerline for VIM
-Plugin 'tmhedberg/matchit'              " Matching tags
-Plugin 'scrooloose/nerdtree'            " File browser/manager
-Plugin 'chriskempson/base16-vim'        " Colorschemes
-Plugin 'tpope/vim-fugitive'             " Git plugin
-Plugin 'tpope/vim-surround'             " Surrounding tags
-Plugin 'vim-scripts/tComment'           " Bulk comment toggling
-Plugin 'vim-scripts/ctags.vim'          " Tag indexing
-Plugin 'groenewege/vim-less'            " Less syntax mode
-Plugin 'evidens/vim-twig'               " Twig syntax mode
-Plugin 'fidian/hexmode'                 " View/edit hex files
-Plugin 'editorconfig/editorconfig-vim'  " EditorConfig plugin
+Plugin 'bling/vim-airline'                  " Lightweight Powerline for VIM
+Plugin 'tmhedberg/matchit'                  " Matching tags
+Plugin 'scrooloose/nerdtree'                " File browser/manager
+Plugin 'chriskempson/base16-vim'            " Colorschemes
+Plugin 'tpope/vim-fugitive'                 " Git plugin
+Plugin 'tpope/vim-surround'                 " Surrounding tags
+Plugin 'vim-scripts/tComment'               " Bulk comment toggling
+Plugin 'vim-scripts/ctags.vim'              " Tag indexing
+Plugin 'groenewege/vim-less'                " Less syntax mode
+Plugin 'evidens/vim-twig'                   " Twig syntax mode
+Plugin 'fidian/hexmode'                     " View/edit hex files
+Plugin 'editorconfig/editorconfig-vim'      " EditorConfig plugin
+Plugin 'nathanaelkane/vim-indent-guides'    " Indent guides
 
 " ------------------------------------------------------------------------------
 " Local Plugins
