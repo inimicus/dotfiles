@@ -5,7 +5,7 @@
 	<key>AdjustWindowForFontSizeChange</key>
 	<true/>
 	<key>AllowClipboardAccess</key>
-	<false/>
+	<true/>
 	<key>AnimateDimming</key>
 	<true/>
 	<key>AppleAntiAliasingThreshold</key>
@@ -383,8 +383,12 @@
 	</dict>
 	<key>NSWindow Frame Preferences</key>
 	<string>269 313 606 456 0 0 1280 777 </string>
+	<key>NSWindow Frame SUUpdateAlert</key>
+	<string>330 289 620 392 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>259 184 730 540 0 0 1280 777 </string>
+	<string>130 189 730 540 0 0 1280 777 </string>
+	<key>NSWindow Frame iTerm Window 1</key>
+	<string>152 50 730 539 0 0 1280 777 </string>
 	<key>NeverWarnAboutMeta</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_F6463331-7E4B-48D0-9D68-66CBCE1A45B8</key>
@@ -1120,7 +1124,15 @@
 		</dict>
 	</array>
 	<key>NoSyncLastTipTime</key>
-	<real>461723129.68686199</real>
+	<real>464289589.25604999</real>
+	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
+	<real>465520634.27310097</real>
+	<key>NoSyncTimeOfLastPromo</key>
+	<real>461740173.531896</real>
+	<key>NoSyncTimeOfLastPromoDownload</key>
+	<real>464041174.20504397</real>
+	<key>NoSyncTipsDisabled</key>
+	<true/>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
 	<key>OpenArrangementAtStartup</key>
@@ -1128,7 +1140,7 @@
 	<key>OpenBookmark</key>
 	<false/>
 	<key>OpenNoWindowsAtStartup</key>
-	<true/>
+	<false/>
 	<key>OpenTmuxWindowsIn</key>
 	<integer>0</integer>
 	<key>PMPrintingExpandedStateForPrint2</key>
@@ -1189,7 +1201,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2015-08-19T00:26:41Z</date>
+	<date>2015-11-12T01:24:07Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -1235,6 +1247,6 @@
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
 	<key>iTerm Version</key>
-	<string>2.9.20150626</string>
+	<string>2.9.20151111</string>
 </dict>
 </plist>
