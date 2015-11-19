@@ -382,13 +382,9 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame Preferences</key>
-	<string>269 313 606 456 0 0 1280 777 </string>
-	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>330 289 620 392 0 0 1280 777 </string>
+	<string>269 197 606 456 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>130 189 730 540 0 0 1280 777 </string>
-	<key>NSWindow Frame iTerm Window 1</key>
-	<string>152 50 730 539 0 0 1280 777 </string>
+	<string>664 700 730 513 0 0 2560 1417 </string>
 	<key>NeverWarnAboutMeta</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_F6463331-7E4B-48D0-9D68-66CBCE1A45B8</key>
@@ -942,11 +938,11 @@
 			<key>Name</key>
 			<string>g4rr3t</string>
 			<key>Non Ascii Font</key>
-			<string>SauceCodePowerline-Light 14</string>
+			<string>SourceCodePro-Light 14</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>SauceCodePowerline-Light 14</string>
+			<string>SourceCodePro-Light 14</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -1123,16 +1119,8 @@
 			<string>/Users/gjennings</string>
 		</dict>
 	</array>
-	<key>NoSyncLastTipTime</key>
-	<real>464289589.25604999</real>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
-	<real>465520634.27310097</real>
-	<key>NoSyncTimeOfLastPromo</key>
-	<real>461740173.531896</real>
-	<key>NoSyncTimeOfLastPromoDownload</key>
-	<real>464041174.20504397</real>
-	<key>NoSyncTipsDisabled</key>
-	<true/>
+	<real>469647148.83900899</real>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
 	<key>OpenArrangementAtStartup</key>
@@ -1201,7 +1189,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2015-11-12T01:24:07Z</date>
+	<date>2015-11-19T17:52:21Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
