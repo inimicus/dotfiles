@@ -14,7 +14,8 @@ Plugin 'gmarik/Vundle.vim'          " Let Vundle manage Vundle
 " ------------------------------------------------------------------------------
 " Plugins List (Via Github Repos)
 " ------------------------------------------------------------------------------
-Plugin 'bling/vim-airline'                  " Lightweight Powerline for VIM
+Plugin 'vim-airline/vim-airline'            " Lightweight Powerline for VIM
+Plugin 'vim-airline/vim-airline-themes'     " Airline themes
 Plugin 'tmhedberg/matchit'                  " Matching tags
 Plugin 'scrooloose/nerdtree'                " File browser/manager
 Plugin 'chriskempson/base16-vim'            " Colorschemes
