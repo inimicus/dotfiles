@@ -54,7 +54,7 @@ let g:EditorConfig_exclude_patterns = ['scp://.*']      " Nothing over SSH
 " ------------------------------------------------------------------------------
 " YouCompleteMe Settings
 " ------------------------------------------------------------------------------
-let g:ycm_key_list_select_completion = ['<TAB>', '<Down>', '<Enter']
+let g:ycm_key_list_select_completion = ['<TAB>', '<Down>', '<Enter>']
 
 " ------------------------------------------------------------------------------
 " Indent Guides
