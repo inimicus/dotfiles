@@ -28,6 +28,7 @@ Plugin 'evidens/vim-twig'                   " Twig syntax mode
 Plugin 'fidian/hexmode'                     " View/edit hex files
 Plugin 'editorconfig/editorconfig-vim'      " EditorConfig plugin
 Plugin 'nathanaelkane/vim-indent-guides'    " Indent guides
+Plugin 'scrooloose/syntastic'               " Syntax checking
 
 " ------------------------------------------------------------------------------
 " Local Plugins
