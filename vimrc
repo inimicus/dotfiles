@@ -9,7 +9,7 @@ if filereadable($HOME . "/.vimrc.bundles")
     source $HOME/.vimrc.bundles
 endif
 
-
+" ------------------------------------------------------------------------------
 " Commands
 " ------------------------------------------------------------------------------
 set wildmenu                " Show tab completion options
