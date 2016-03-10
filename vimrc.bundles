@@ -5,30 +5,30 @@
 " ------------------------------------------------------------------------------
 " Setup Vundle
 " ------------------------------------------------------------------------------
-set nocompatible                    " Use VIM (Required)
-filetype off                        " Required for Vundle setup
-set rtp+=~/.vim/bundle/Vundle.vim   " Set runtime path
-call vundle#begin()                 " Initalize Vundle
-Plugin 'gmarik/Vundle.vim'          " Let Vundle manage Vundle
+set nocompatible                            " Use VIM (Required)
+filetype off                                " Required for Vundle setup
+set rtp+=~/.vim/bundle/Vundle.vim           " Set runtime path
+call vundle#begin()                         " Initalize Vundle
+Plugin 'gmarik/Vundle.vim'                  " Let Vundle manage Vundle
 
 " ------------------------------------------------------------------------------
 " Plugins List (Via Github Repos)
 " ------------------------------------------------------------------------------
-Plugin 'vim-airline/vim-airline'            " Lightweight Powerline for VIM
-Plugin 'vim-airline/vim-airline-themes'     " Airline themes
-Plugin 'tmhedberg/matchit'                  " Matching tags
-Plugin 'scrooloose/nerdtree'                " File browser/manager
 Plugin 'chriskempson/base16-vim'            " Colorschemes
-Plugin 'tpope/vim-fugitive'                 " Git plugin
-Plugin 'tpope/vim-surround'                 " Surrounding tags
-Plugin 'vim-scripts/tComment'               " Bulk comment toggling
-Plugin 'vim-scripts/ctags.vim'              " Tag indexing
-Plugin 'groenewege/vim-less'                " Less syntax mode
+Plugin 'editorconfig/editorconfig-vim'      " EditorConfig plugin
 Plugin 'evidens/vim-twig'                   " Twig syntax mode
 Plugin 'fidian/hexmode'                     " View/edit hex files
-Plugin 'editorconfig/editorconfig-vim'      " EditorConfig plugin
+Plugin 'groenewege/vim-less'                " Less syntax mode
 Plugin 'nathanaelkane/vim-indent-guides'    " Indent guides
+Plugin 'scrooloose/nerdtree'                " File browser/manager
 Plugin 'scrooloose/syntastic'               " Syntax checking
+Plugin 'tmhedberg/matchit'                  " Matching tags
+Plugin 'tpope/vim-fugitive'                 " Git plugin
+Plugin 'tpope/vim-surround'                 " Surrounding tags
+Plugin 'vim-scripts/ctags.vim'              " Tag indexing
+Plugin 'vim-scripts/tComment'               " Bulk comment toggling
+Plugin 'vim-airline/vim-airline'            " Lightweight Powerline for VIM
+Plugin 'vim-airline/vim-airline-themes'     " Airline themes
 
 " ------------------------------------------------------------------------------
 " Local Plugins
@@ -40,8 +40,8 @@ endif
 " ------------------------------------------------------------------------------
 " End List, Run
 " ------------------------------------------------------------------------------
-call vundle#end()                   " Required
-filetype plugin indent on           " Required
+call vundle#end()                           " Required
+filetype plugin indent on                   " Required
 
 " ------------------------------------------------------------------------------
 " Additional Information
