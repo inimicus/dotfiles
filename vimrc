@@ -94,6 +94,7 @@ colorscheme base16-tomorrow   " Colorscheme
 " Airline
 " ------------------------------------------------------------------------------
 let g:airline_powerline_fonts = 1   " Use powerline fonts
+let g:airline_theme='base16'
 
 " ------------------------------------------------------------------------------
 " OS X Ten Key
