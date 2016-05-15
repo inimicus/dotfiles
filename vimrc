@@ -36,23 +36,54 @@ set laststatus=2            " Always display the status line
 " ------------------------------------------------------------------------------
 set tabstop=4               " Column size of tabs
 set hidden                  " Enable background buffer
+set backspace=2             " Backspace over indent, eol, start in insert mode
 set expandtab               " Tabs as spaces
 set softtabstop=4           " Colums of tabs in insert mode
 set shiftwidth=4            " Columns to indent by
+set shiftround              " Always align indents to shift width
 set timeoutlen=50           " Quickly change modes
 set encoding=utf-8          " Default encoding
 set lazyredraw              " Don't redraw while executing macros
 set ai                      " Auto indent
 set si                      " Smart indent
+set belloff=esc,cursor      " Silence bell for benign errors
 
 " ------------------------------------------------------------------------------
-" EditorConfig Settings
+" Searching
+" ------------------------------------------------------------------------------
+set hlsearch                " Highlight search results
+set incsearch               " Dynamically as typed
+
+" ------------------------------------------------------------------------------
+" File Handling
+" ------------------------------------------------------------------------------
+set nobackup                " Don't create backups
+set nowb                    " Prevent automatic write backup
+set noswapfile              " Don't keep a swap file
+set bsdir=last              " Last working directory is default working directory
+
+" ------------------------------------------------------------------------------
+" Color Configuration
+" ------------------------------------------------------------------------------
+syntax on                   " Use syntax coloring
+set background=dark         " Dark colorscheme
+let base16colorspace=256    " Use 256 colors
+set t_Co=256                " Use 256 colors
+colorscheme base16-tomorrow " Colorscheme
+
+
+" ==============================================================================
+" PLUGIN-SPECIFIC CONFIGURATION
+" ==============================================================================
+
+" ------------------------------------------------------------------------------
+" EditorConfig
 " ------------------------------------------------------------------------------
 let g:EditorConfig_exclude_patterns = ['fugitive://.*'] " Be nice to Fugitive
 let g:EditorConfig_exclude_patterns = ['scp://.*']      " Nothing over SSH
 
 " ------------------------------------------------------------------------------
-" YouCompleteMe Settings
+" YouCompleteMe
 " ------------------------------------------------------------------------------
 let g:ycm_key_list_select_completion = ['<TAB>', '<Down>', '<Enter>']
 
@@ -67,38 +98,27 @@ let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_start_level = 2
 
 " ------------------------------------------------------------------------------
-" Searching
-" ------------------------------------------------------------------------------
-set hlsearch                " Highlight search results
-set incsearch               " Dynamically as typed
-
-" ------------------------------------------------------------------------------
-" File Handling
-" ------------------------------------------------------------------------------
-set nobackup          " Don't create backups
-set autoread          " Automatically read externally edited files
-set nowb              " Prevent automatic write backup
-set noswapfile        " Don't keep a swap file
-set bsdir=last        " Last working directory is default working directory
-
-" ------------------------------------------------------------------------------
-" Color Configuration
-" ------------------------------------------------------------------------------
-syntax on                     " Use syntax coloring
-set background=dark           " Dark colorscheme
-let base16colorspace=256      " Use 256 colors
-set t_Co=256                  " Use 256 colors
-colorscheme base16-tomorrow   " Colorscheme
-
-" ------------------------------------------------------------------------------
 " Airline
 " ------------------------------------------------------------------------------
-let g:airline_powerline_fonts = 1   " Use powerline fonts
-let g:airline_theme='base16'
+let g:airline_theme='base16'                    " Force theme
+let g:airline_powerline_fonts = 1               " Use powerline fonts
+let g:airline_skip_empty_sections = 1           " Don't show empty sections
+let g:airline#extensions#syntastic#enabled = 1  " Integrate Syntastic
 
-" ------------------------------------------------------------------------------
-" OS X Ten Key
-" ------------------------------------------------------------------------------
+" Customize Right Side Display
+let g:airline_section_z = '%{g:airline_symbols.linenr}%\ %l:%-2v %{g:airline_symbols.maxlinenr}%\ %L'
+
+" Shorten Modes Display
+let g:airline_mode_map = {
+    \ '__' : '-', 'n'  : 'N', 'i'  : 'I', 'R'  : 'R',
+    \ 'c'  : 'C', 'v'  : 'V', 'V'  : 'V', '' : 'V',
+    \ 's'  : 'S', 'S'  : 'S', '' : 'S'}
+
+
+" ==============================================================================
+" OS X Ten Key Fix
+" ==============================================================================
+
 map <Esc>Oq 1
 map <Esc>Or 2
 map <Esc>Os 3
@@ -134,9 +154,11 @@ map! <Esc>OS -
 map! <Esc>OX =
 map! <Esc>OM <CR>
 
-" ------------------------------------------------------------------------------
+
+" ==============================================================================
 " Local Configuration
-" ------------------------------------------------------------------------------
+" ==============================================================================
+
 if filereadable($HOME . "/.vimrc.local")
     source $HOME/.vimrc.local
 endif
