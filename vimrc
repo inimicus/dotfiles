@@ -47,6 +47,7 @@ set lazyredraw              " Don't redraw while executing macros
 set ai                      " Auto indent
 set si                      " Smart indent
 set belloff=esc,cursor      " Silence bell for benign errors
+set updatetime=250          " Shorten delay between updates
 
 " ------------------------------------------------------------------------------
 " Searching
@@ -86,7 +87,6 @@ let g:EditorConfig_exclude_patterns = ['scp://.*']      " Nothing over SSH
 " GitGutter
 " ------------------------------------------------------------------------------
 let g:gitgutter_enabled = 0     " Off by default, explicitly enable
-set updatetime=250              " Shorten delay between updates
 
 " ------------------------------------------------------------------------------
 " YouCompleteMe
