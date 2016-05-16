@@ -112,6 +112,9 @@ let g:airline_skip_empty_sections = 1           " Don't show empty sections
 let g:airline#extensions#syntastic#enabled = 1  " Integrate Syntastic
 
 " Customize Right Side Display
+let g:airline_section_x = ''
+let g:airline_section_y = '%{airline#util#wrap(airline#parts#filetype(),0)}'
+" Previously %{airline#util#wrap(airline#parts#ffenc(),0)}
 let g:airline_section_z = '%{g:airline_symbols.linenr}%\ %l:%-2v %{g:airline_symbols.maxlinenr}%\ %L'
 
 " Shorten Modes Display
