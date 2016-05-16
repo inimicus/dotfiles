@@ -83,6 +83,12 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*'] " Be nice to Fugitive
 let g:EditorConfig_exclude_patterns = ['scp://.*']      " Nothing over SSH
 
 " ------------------------------------------------------------------------------
+" GitGutter
+" ------------------------------------------------------------------------------
+let g:gitgutter_enabled = 0     " Off by default, explicitly enable
+set updatetime=250              " Shorten delay between updates
+
+" ------------------------------------------------------------------------------
 " YouCompleteMe
 " ------------------------------------------------------------------------------
 let g:ycm_key_list_select_completion = ['<TAB>', '<Down>', '<Enter>']
