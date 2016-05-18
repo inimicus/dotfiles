@@ -46,7 +46,9 @@ set encoding=utf-8          " Default encoding
 set lazyredraw              " Don't redraw while executing macros
 set ai                      " Auto indent
 set si                      " Smart indent
-set belloff=esc,cursor      " Silence bell for benign errors
+set noerrorbells            " Turn off error bells
+set visualbell              " Enable visual bell...
+set t_vb=                   " ...then set it to nothing (off)
 set updatetime=250          " Shorten delay between updates
 
 " ------------------------------------------------------------------------------
