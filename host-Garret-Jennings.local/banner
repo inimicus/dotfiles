@@ -34,7 +34,7 @@ echo "  .o. 888 \`Y8bod8P' o888o o888o o888o o888o o888o o888o o888o \`8oooooo. 
 echo "  888.888                                                     d\"     YD"
 echo "  \`Y888P  ${white}==================================================  ${yellow}\"Y88888P'  ${white}========"
 echo
-echo "      ${white}STATISTICS${normal}${white}"
+echo "      ${yellow}STATISTICS${normal}${white}"
 echo "      Disk:     ${rootVolume}"
 command printf "      Memory:   %'0.fM of %'0.fM (%d%% Used)\n" $memUsed $memTotal $memPercent
 echo "      Load:     ${load}"

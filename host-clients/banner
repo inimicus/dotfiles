@@ -25,7 +25,7 @@ echo " MMMMMMMMMM       M        MMMMMMMMMMM           CCCCCCC"
 echo
 echo "${white}================================================================="
 echo
-echo "    ${white}STATISTICS${normal}${white}"
+echo "    ${orange}STATISTICS${normal}${white}"
 
 df -h -x tmpfs -x udev -x devtmpfs | tail -n 1 | awk '{print "    Disk:      "$3" of "$2" ("$5" Full)"     }'
 
