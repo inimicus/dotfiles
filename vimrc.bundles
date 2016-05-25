@@ -21,13 +21,13 @@ Plugin 'evidens/vim-twig'                   " Twig syntax mode
 Plugin 'fidian/hexmode'                     " View/edit hex files
 Plugin 'groenewege/vim-less'                " Less syntax mode
 Plugin 'nathanaelkane/vim-indent-guides'    " Indent guides
+Plugin 'robotvert/vim-nginx'                " Nginx config file syntax
 Plugin 'scrooloose/nerdtree'                " File browser/manager
 Plugin 'scrooloose/syntastic'               " Syntax checking
 Plugin 'tmhedberg/matchit'                  " Matching tags
 Plugin 'tpope/vim-fugitive'                 " Git plugin
 Plugin 'tpope/vim-surround'                 " Surrounding tags
 Plugin 'vim-scripts/ctags.vim'              " Tag indexing
-Plugin 'robotvert/vim-nginx'                " Nginx config file syntax
 Plugin 'vim-scripts/tComment'               " Bulk comment toggling
 Plugin 'vim-airline/vim-airline'            " Lightweight Powerline for VIM
 Plugin 'vim-airline/vim-airline-themes'     " Airline themes
