@@ -18,6 +18,7 @@ Plugin 'airblade/vim-gitgutter'             " Show git changes in line numbers
 Plugin 'chriskempson/base16-vim'            " Colorschemes
 Plugin 'editorconfig/editorconfig-vim'      " EditorConfig plugin
 Plugin 'evidens/vim-twig'                   " Twig syntax mode
+Plugin 'fatih/vim-go'                       " Go development plugin
 Plugin 'fidian/hexmode'                     " View/edit hex files
 Plugin 'groenewege/vim-less'                " Less syntax mode
 Plugin 'nathanaelkane/vim-indent-guides'    " Indent guides
