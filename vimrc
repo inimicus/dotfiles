@@ -98,12 +98,28 @@ let g:ycm_key_list_select_completion = ['<TAB>', '<Down>', '<Enter>']
 " ------------------------------------------------------------------------------
 " Indent Guides
 " ------------------------------------------------------------------------------
-let g:indent_guides_guide_size = 1
-let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=18
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=18
-let g:indent_guides_enable_on_vim_startup = 1
-let g:indent_guides_start_level = 2
+autocmd BufReadPost * call s:CheckTabStyle()
+
+" Use different indent guides based on indent style
+function! s:CheckTabStyle()
+    if &expandtab
+                                                " For tabs as spaces
+        :IndentGuidesEnable                     " Use IndentGuides plugin
+        hi IndentGuidesOdd  ctermbg=18          " Gray
+        hi IndentGuidesEven ctermbg=18          " Gray
+        let g:indent_guides_guide_size = 1      " Skinny guides
+        let g:indent_guides_auto_colors = 0     " Use above forced colors
+        let g:indent_guides_start_level = 2     " Only show after second indent
+    else
+                                                " For tabs as tabs
+        set list lcs=tab:│\                     " Mind the space
+        hi FirstIndent ctermfg=0                " First indent hidden
+        hi OtherIndents ctermfg=19              " Gray
+        let w:m1=matchadd('FirstIndent', '^\t', -1)
+        let w:m2=matchadd('OtherIndents', '\(^\t\)\@!\t', -1)
+    endif
+endfunction
+
 
 " ------------------------------------------------------------------------------
 " Airline
