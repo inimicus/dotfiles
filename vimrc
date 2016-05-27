@@ -98,7 +98,9 @@ let g:ycm_key_list_select_completion = ['<TAB>', '<Down>', '<Enter>']
 " ------------------------------------------------------------------------------
 " Indent Guides
 " ------------------------------------------------------------------------------
-autocmd BufReadPost * call s:CheckTabStyle()
+autocmd VimEnter * call s:CheckTabStyle()       " This might be overkill...
+autocmd WinEnter * call s:CheckTabStyle()       " But we'll see how it
+autocmd BufReadPost * call s:CheckTabStyle()    " handles multiple buffers
 
 " Use different indent guides based on indent style
 function! s:CheckTabStyle()
@@ -117,6 +119,16 @@ function! s:CheckTabStyle()
         hi OtherIndents ctermfg=19              " Gray
         let w:m1=matchadd('FirstIndent', '^\t', -1)
         let w:m2=matchadd('OtherIndents', '\(^\t\)\@!\t', -1)
+
+        " Other methods for persistence?
+        "autocmd VimEnter * autocmd WinEnter * let w:created=1
+        "autocmd VimEnter * let w:created=1
+        "autocmd WinEnter * if !exists('w:created') | 
+        "   \ let w:m1=matchadd('FirstIndent', '^\t', -1) | 
+        "   \ endif
+        "autocmd WinEnter * if !exists('w:created') | 
+        "   \ let w:m2=matchadd('OtherIndents', '\(^\t\)\@!\t', -1) | 
+        "   \ endif
     endif
 endfunction
 
