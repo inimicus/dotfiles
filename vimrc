@@ -107,16 +107,16 @@ function! s:CheckTabStyle()
     if &expandtab
                                                 " For tabs as spaces
         :IndentGuidesEnable                     " Use IndentGuides plugin
-        hi IndentGuidesOdd  ctermbg=18          " Gray
-        hi IndentGuidesEven ctermbg=18          " Gray
+        highlight IndentGuidesOdd  ctermbg=18   " Gray
+        highlight IndentGuidesEven ctermbg=18   " Gray
         let g:indent_guides_guide_size = 1      " Skinny guides
         let g:indent_guides_auto_colors = 0     " Use above forced colors
         let g:indent_guides_start_level = 2     " Only show after second indent
     else
                                                 " For tabs as tabs
         set list lcs=tab:│\                     " Mind the space
-        hi FirstIndent ctermfg=0                " First indent hidden
-        hi OtherIndents ctermfg=19              " Gray
+        highlight FirstIndent  ctermfg=0        " First indent hidden
+        highlight OtherIndents ctermfg=19       " Gray
         let w:m1=matchadd('FirstIndent', '^\t', -1)
         let w:m2=matchadd('OtherIndents', '\(^\t\)\@!\t', -1)
 
