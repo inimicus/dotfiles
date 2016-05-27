@@ -114,6 +114,7 @@ function! s:CheckTabStyle()
         let g:indent_guides_start_level = 2     " Only show after second indent
     else
                                                 " For tabs as tabs
+        :IndentGuidesDisable                    " Turn off IndentGuides plugin
         set list lcs=tab:│\                     " Mind the space
         highlight FirstIndent  ctermfg=0        " First indent hidden
         highlight OtherIndents ctermfg=19       " Gray
