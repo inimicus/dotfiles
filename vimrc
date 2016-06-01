@@ -50,6 +50,8 @@ set noerrorbells            " Turn off error bells
 set visualbell              " Enable visual bell...
 set t_vb=                   " ...then set it to nothing (off)
 set updatetime=250          " Shorten delay between updates
+set foldmethod=syntax       " Use syntax mode for folding
+set foldlevelstart=99       " Manually close folds
 
 " ------------------------------------------------------------------------------
 " Searching
@@ -94,6 +96,11 @@ let g:gitgutter_enabled = 0     " Off by default, explicitly enable
 " YouCompleteMe
 " ------------------------------------------------------------------------------
 let g:ycm_key_list_select_completion = ['<TAB>', '<Down>', '<Enter>']
+" ------------------------------------------------------------------------------
+" vim-go
+" ------------------------------------------------------------------------------
+let g:go_fmt_experimental=1         " Enable experimental features
+                                    " to hopefully maintain folds on save
 
 " ------------------------------------------------------------------------------
 " Indent Guides
