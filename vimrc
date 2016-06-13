@@ -104,6 +104,14 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 " ------------------------------------------------------------------------------
 let g:go_fmt_experimental=1         " Enable experimental features
                                     " to hopefully maintain folds on save
+let g:go_fmt_command = "goimports"  " Auto import packages
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_interfaces = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
 
 " ------------------------------------------------------------------------------
 " Indent Guides
