@@ -34,6 +34,8 @@ Plugin 'vim-scripts/ctags.vim'              " Tag indexing
 Plugin 'vim-scripts/tComment'               " Bulk comment toggling
 Plugin 'vim-airline/vim-airline'            " Lightweight Powerline for VIM
 Plugin 'vim-airline/vim-airline-themes'     " Airline themes
+Plugin 'xolox/vim-lua-ftplugin'             " Lua syntax
+Plugin 'xolox/vim-misc'                     " Dependency for vim-lua-ftplugin
 
 " ------------------------------------------------------------------------------
 " Local Plugins
