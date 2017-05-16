@@ -12,8 +12,20 @@ for rcfile in ${ZDOTDIR:-$HOME}/.dotfiles/zprezto/runcoms/^README.md(.N); do
 done
 
 if [ ! -e $HOME/.vim/bundle/YouCompleteMe/third_party/ycmd/ycm_client_support.so ]; then
-    if [ -e $HOME/.vim/bundle/YouCompleteMe/install.sh ]; then
-        $HOME/.vim/bundle/YouCompleteMe/install.sh --clang-completer
+    if [ -e $HOME/.vim/bundle/YouCompleteMe/install.py ]; then
+        # The following additional language support options are available:
+        #
+        # - C# support: install Mono with Homebrew or by downloading the Mono Mac package and add --omnisharp-completer when calling ./install.py.
+        # - Go support: install Go and add --gocode-completer when calling ./install.py.
+        # - TypeScript support: install Node.js and npm then install the TypeScript SDK with npm install -g typescript.
+        # - JavaScript support: install Node.js and npm and add --tern-completer when calling ./install.py.
+        # - Rust support: install Rust and add --racer-completer when calling ./install.py.
+        #
+        # To simply compile with everything enabled, there's a --all flag. 
+        # So, to install with all language features, ensure xbuild, go, 
+        # tsserver, node, npm, rustc, and cargo tools are installed and 
+        # in your PATH, then simply run:
+        $HOME/.vim/bundle/YouCompleteMe/install.py --all
     fi
 fi
 
