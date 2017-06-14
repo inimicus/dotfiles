@@ -98,6 +98,7 @@ let g:gitgutter_enabled = 0     " Off by default, explicitly enable
 let g:ycm_key_list_select_completion = ['<TAB>', '<Down>', '<Enter>']
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_confirm_extra_conf = 0
 
 " ------------------------------------------------------------------------------
 " vim-go
