@@ -22,8 +22,13 @@ Plugin 'fatih/vim-go'                       " Go development plugin
 Plugin 'fidian/hexmode'                     " View/edit hex files
 Plugin 'groenewege/vim-less'                " Less syntax mode
 Plugin 'elzr/vim-json'                      " JSON badassery
+Plugin 'jiangmiao/auto-pairs'               " Smart bracket/parents/quotes
+Plugin 'keith/swift.vim'                    " Swift syntax
+Plugin 'leafgarland/typescript-vim'         " Typescript
 Plugin 'majutsushi/tagbar'                  " Tag and structure browser
 Plugin 'nathanaelkane/vim-indent-guides'    " Indent guides
+Plugin 'quramy/tsuquyomi'                   " Typescript features
+Plugin 'quramy/vim-js-pretty-template'      " Typescript template formatting
 Plugin 'robotvert/vim-nginx'                " Nginx config file syntax
 Plugin 'scrooloose/nerdtree'                " File browser/manager
 Plugin 'scrooloose/syntastic'               " Syntax checking

@@ -101,6 +101,12 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_confirm_extra_conf = 0
 
 " ------------------------------------------------------------------------------
+" Tsuquyomi
+" ------------------------------------------------------------------------------
+let g:tsuquyomi_disable_quickfix = 1
+let g:syntastic_typescript_checkers = ['tsuquyomi']
+
+" ------------------------------------------------------------------------------
 " vim-go
 " ------------------------------------------------------------------------------
 let g:go_fmt_experimental=1         " Enable experimental features
