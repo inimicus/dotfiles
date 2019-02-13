@@ -34,6 +34,7 @@ Plugin 'scrooloose/nerdtree'                " File browser/manager
 Plugin 'scrooloose/syntastic'               " Syntax checking
 Plugin 'tmhedberg/matchit'                  " Matching tags
 Plugin 'tpope/vim-fugitive'                 " Git plugin
+Plugin 'tpope/vim-rails'                    " Ruby on Rails
 Plugin 'tpope/vim-surround'                 " Surrounding tags
 Plugin 'vim-scripts/ctags.vim'              " Tag indexing
 Plugin 'vim-scripts/tComment'               " Bulk comment toggling
