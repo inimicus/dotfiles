@@ -38,6 +38,7 @@ set colorcolumn=80          " Column guide at 80 characters
 set noshowmode              " Don't show default mode indicator
 set ruler                   " Alway show cursor position
 set cursorline              " Show active line
+hi CursorLine term=none cterm=none guibg=Grey40
 set laststatus=2            " Always display the status line
 
 " ------------------------------------------------------------------------------
