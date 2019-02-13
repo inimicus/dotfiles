@@ -16,6 +16,15 @@ set wildmenu                " Show tab completion options
 set wildmode=list:longest   " Similar to shell matching
 
 " ------------------------------------------------------------------------------
+" Color Configuration
+" ------------------------------------------------------------------------------
+syntax on                   " Use syntax coloring
+set background=dark         " Dark colorscheme
+let base16colorspace=256    " Use 256 colors
+set t_Co=256                " Use 256 colors
+colorscheme base16-tomorrow " Colorscheme
+
+" ------------------------------------------------------------------------------
 " Line Numbers
 " ------------------------------------------------------------------------------
 set number                  " Show line numbers
@@ -66,15 +75,6 @@ set nobackup                " Don't create backups
 set nowritebackup           " Prevent automatic write backup
 set noswapfile              " Don't keep a swap file
 set bsdir=last              " Last working directory is default working directory
-
-" ------------------------------------------------------------------------------
-" Color Configuration
-" ------------------------------------------------------------------------------
-syntax on                   " Use syntax coloring
-set background=dark         " Dark colorscheme
-let base16colorspace=256    " Use 256 colors
-set t_Co=256                " Use 256 colors
-colorscheme base16-tomorrow " Colorscheme
 
 
 " ==============================================================================
