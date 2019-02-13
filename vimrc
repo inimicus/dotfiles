@@ -150,11 +150,11 @@ function! s:CheckTabStyle()
         " Other methods for persistence?
         "autocmd VimEnter * autocmd WinEnter * let w:created=1
         "autocmd VimEnter * let w:created=1
-        "autocmd WinEnter * if !exists('w:created') | 
-        "   \ let w:m1=matchadd('FirstIndent', '^\t', -1) | 
+        "autocmd WinEnter * if !exists('w:created') |
+        "   \ let w:m1=matchadd('FirstIndent', '^\t', -1) |
         "   \ endif
-        "autocmd WinEnter * if !exists('w:created') | 
-        "   \ let w:m2=matchadd('OtherIndents', '\(^\t\)\@!\t', -1) | 
+        "autocmd WinEnter * if !exists('w:created') |
+        "   \ let w:m2=matchadd('OtherIndents', '\(^\t\)\@!\t', -1) |
         "   \ endif
     endif
 endfunction
