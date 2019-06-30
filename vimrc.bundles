@@ -16,6 +16,7 @@ Plugin 'gmarik/Vundle.vim'                  " Let Vundle manage Vundle
 " ------------------------------------------------------------------------------
 Plugin 'airblade/vim-gitgutter'             " Show git changes in line numbers
 Plugin 'chriskempson/base16-vim'            " Colorschemes
+Plugin 'ctrlpvim/ctrlp.vim'                 " Fast fuzzy finder
 Plugin 'editorconfig/editorconfig-vim'      " EditorConfig plugin
 Plugin 'evidens/vim-twig'                   " Twig syntax mode
 Plugin 'fatih/vim-go'                       " Go development plugin
@@ -23,8 +24,10 @@ Plugin 'fidian/hexmode'                     " View/edit hex files
 Plugin 'groenewege/vim-less'                " Less syntax mode
 Plugin 'elzr/vim-json'                      " JSON badassery
 Plugin 'jiangmiao/auto-pairs'               " Smart bracket/parents/quotes
+Plugin 'jremmen/vim-ripgrep'                " Search file contents via rg inside vim
 Plugin 'keith/swift.vim'                    " Swift syntax
 Plugin 'leafgarland/typescript-vim'         " Typescript
+Plugin 'ludovicchabant/vim-gutentags'       " Clever tag files - Use with universal-ctags
 Plugin 'majutsushi/tagbar'                  " Tag and structure browser
 Plugin 'nathanaelkane/vim-indent-guides'    " Indent guides
 Plugin 'quramy/tsuquyomi'                   " Typescript features
@@ -32,12 +35,14 @@ Plugin 'quramy/vim-js-pretty-template'      " Typescript template formatting
 Plugin 'robotvert/vim-nginx'                " Nginx config file syntax
 Plugin 'scrooloose/nerdtree'                " File browser/manager
 Plugin 'scrooloose/syntastic'               " Syntax checking
+Plugin 'shawncplus/phpcomplete.vim'         " Improved PHP Omnicompletion
+Plugin 'StanAngeloff/php.vim'               " Improved PHP syntax highlighting
+Plugin 'stephpy/vim-php-cs-fixer'           " PHP code style fixer
 Plugin 'tmhedberg/matchit'                  " Matching tags
+Plugin 'tpope/vim-commentary'               " Better comments
 Plugin 'tpope/vim-fugitive'                 " Git plugin
 Plugin 'tpope/vim-rails'                    " Ruby on Rails
 Plugin 'tpope/vim-surround'                 " Surrounding tags
-Plugin 'vim-scripts/ctags.vim'              " Tag indexing
-Plugin 'vim-scripts/tComment'               " Bulk comment toggling
 Plugin 'vim-airline/vim-airline'            " Lightweight Powerline for VIM
 Plugin 'vim-airline/vim-airline-themes'     " Airline themes
 Plugin 'xolox/vim-lua-ftplugin'             " Lua syntax

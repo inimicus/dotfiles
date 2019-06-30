@@ -9,8 +9,18 @@ if filereadable($HOME . "/.vimrc.bundles")
     source $HOME/.vimrc.bundles
 endif
 
+let mapleader="\<space>"    " Take me to space, I wanna go to space!
+
 " ------------------------------------------------------------------------------
 " Commands
+" ------------------------------------------------------------------------------
+" Reload vimrc
+nmap <silent> <leader>vrc :so $MYVIMRC<cr>
+" Get commit history of current buffer
+command History !git --no-pager log --topo-order '--date=short' '--pretty=format:\%C(blue)\%ad\%C(reset) \%C(green)\%h\%C(reset)\%<|(38) \%aN :: \%s\%C(red)\%d\%C(reset)' -- %
+
+" ------------------------------------------------------------------------------
+" Command Menu
 " ------------------------------------------------------------------------------
 set wildmenu                " Show tab completion options
 set wildmode=list:longest   " Similar to shell matching
@@ -40,6 +50,12 @@ set ruler                   " Alway show cursor position
 set cursorline              " Show active line
 hi CursorLine term=none cterm=none guibg=Grey40
 set laststatus=2            " Always display the status line
+" Hide cursorline for inactive buffers
+augroup CursorLine
+    au!
+    au WinLeave * setlocal nocursorline
+    au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+augroup End
 
 " ------------------------------------------------------------------------------
 " Editing
@@ -51,7 +67,8 @@ set expandtab               " Tabs as spaces
 set softtabstop=4           " Colums of tabs in insert mode
 set shiftwidth=4            " Columns to indent by
 set shiftround              " Always align indents to shift width
-set timeoutlen=50           " Quickly change modes
+set timeoutlen=500          " Short timeouts
+set ttimeoutlen=50          " Quickly change modes
 set encoding=utf-8          " Default encoding
 set lazyredraw              " Don't redraw while executing macros
 set autoindent              " Auto indent
@@ -66,8 +83,14 @@ set foldlevelstart=99       " Manually close folds
 " ------------------------------------------------------------------------------
 " Searching
 " ------------------------------------------------------------------------------
+set ignorecase              " Ignore case when searching
+set smartcase               " Ignore above setting if pattern contains uppercase
 set hlsearch                " Highlight search results
 set incsearch               " Dynamically as typed
+" Normal mode search text under cursor
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+" Visual mode search text selection
+vnoremap K y:grep! "\b<C-R>"\b"<CR>:cw<CR>
 
 " ------------------------------------------------------------------------------
 " File Handling
@@ -83,6 +106,30 @@ set bsdir=last              " Last working directory is default working director
 " ==============================================================================
 
 " ------------------------------------------------------------------------------
+" Commentary
+" ------------------------------------------------------------------------------
+autocmd FileType php setlocal commentstring=//\ %s  " PHP comments as //
+
+" ------------------------------------------------------------------------------
+" CtrlP
+" ------------------------------------------------------------------------------
+if executable('rg')
+    "set grepprg=rg\ -n\ --files\ --hidden\ --glob\ \"\"
+    set grepprg=rg\ -n
+    let g:ctrlp_user_command = 'rg %s --files --hidden --glob ""'
+    let g:ctrlp_use_caching = 0                 " Do not cache
+endif
+
+" Interactively search tag under cursor
+map <silent> <leader>jd :CtrlPTag<cr><C-\>w
+
+let g:ctrlp_lazy_update = 1
+let g:ctrlp_extensions = ['tag', 'buffertag']
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ }
+
+" ------------------------------------------------------------------------------
 " EditorConfig
 " ------------------------------------------------------------------------------
 let g:EditorConfig_exclude_patterns = ['fugitive://.*'] " Be nice to Fugitive
@@ -91,15 +138,42 @@ let g:EditorConfig_exclude_patterns = ['scp://.*']      " Nothing over SSH
 " ------------------------------------------------------------------------------
 " GitGutter
 " ------------------------------------------------------------------------------
-let g:gitgutter_enabled = 0     " Off by default, explicitly enable
+let g:gitgutter_enabled = 0     " Off by default
+command GGT GitGutterToggle
+
+" ------------------------------------------------------------------------------
+" Gutentags
+" ------------------------------------------------------------------------------
+let g:airline#extensions#gutentags#enabled = 1
+let g:gutentags_cache_dir = '~/.tags'
+let g:gutentags_ctags_exclude = ['*.css', '*.html', '*.json', '*.xml',
+                                \ '*.phar', '*.ini', '*.rst', '*.md',
+                                \ '*vendor/*/test*', '*vendor/*/Test*',
+                                \ '*vendor/*/fixture*', '*vendor/*/Fixture*',
+                                \ '*var/cache*', '*var/log*']
 
 " ------------------------------------------------------------------------------
 " YouCompleteMe
 " ------------------------------------------------------------------------------
+"let g:loaded_youcompleteme = 1
+set completeopt-=preview    " Don't show preview pane when completing
 let g:ycm_key_list_select_completion = ['<TAB>', '<Down>', '<Enter>']
+let g:ycm_min_num_of_chars_for_completion = 2
+let g:ycm_add_preview_to_completeopt = 0
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_confirm_extra_conf = 0
+
+" ------------------------------------------------------------------------------
+" Tagbar
+" ------------------------------------------------------------------------------
+let g:tagbar_compact = 1
+command TT TagbarToggle
+
+" ------------------------------------------------------------------------------
+" NERDTree
+" ------------------------------------------------------------------------------
+let g:NERDTreeMinimalUI = 1
 
 " ------------------------------------------------------------------------------
 " Tsuquyomi
@@ -167,12 +241,22 @@ let g:airline_theme='base16'                    " Force theme
 let g:airline_powerline_fonts = 1               " Use powerline fonts
 let g:airline_skip_empty_sections = 1           " Don't show empty sections
 let g:airline#extensions#syntastic#enabled = 1  " Integrate Syntastic
+let g:airline#extensions#branch#displayed_head_limit = 15   " Limit branch length
 
+" Change symbols behaving badly
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+
+" Lightning bolt misbehaving (⚡)
+let g:airline_symbols.dirty=' ⚙'
+
+"let g:airline_section_b = '%{gutentags#statusline()}'
 " Customize Right Side Display
 let g:airline_section_x = ''
 let g:airline_section_y = '%{airline#util#wrap(airline#parts#filetype(),0)}'
 " Previously %{airline#util#wrap(airline#parts#ffenc(),0)}
-let g:airline_section_z = '%{g:airline_symbols.linenr}%\ %l:%-2v %{g:airline_symbols.maxlinenr}%\ %L'
+let g:airline_section_z = '%{g:airline_symbols.linenr}%\%l:%-2v%{g:airline_symbols.maxlinenr}%\ %L'
 
 " Shorten Modes Display
 let g:airline_mode_map = {
