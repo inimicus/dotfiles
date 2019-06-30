@@ -355,6 +355,8 @@
 	<true/>
 	<key>MaxVertically</key>
 	<false/>
+	<key>NSFontPanelAttributes</key>
+	<string>1, 0</string>
 	<key>NSNavLastRootDirectory</key>
 	<string>~/Documents</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
@@ -392,16 +394,23 @@
 	</data>
 	<key>NSTableView Supports v2 KeyBingingTable</key>
 	<true/>
+	<key>NSToolbar Configuration com.apple.NSColorPanel</key>
+	<dict>
+		<key>TB Is Shown</key>
+		<integer>1</integer>
+	</dict>
+	<key>NSWindow Frame NSFontPanel</key>
+	<string>1323 974 445 109 0 0 3840 1578 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>1610 889 620 392 0 0 3840 1578 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 139 606 456 0 0 2560 1418 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>2462 832 796 486 0 0 3840 1578 </string>
+	<string>1123 1121 918 423 0 0 3840 1578 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1198 693 730 540 0 0 3840 1578 </string>
+	<string>0 0 3840 1578 0 0 3840 1578 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>893 779 1319 771 0 0 3840 1578 </string>
+	<string>1430 795 730 540 0 0 3840 1578 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>413 279 2925 1299 0 0 3840 1578 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
@@ -1042,11 +1051,11 @@
 			<key>Name</key>
 			<string>g4rr3t</string>
 			<key>Non Ascii Font</key>
-			<string>SourceCodePro-Light 14</string>
+			<string>SourceCodeVariable-Roman-Light 14</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>SourceCodePro-Light 14</string>
+			<string>SourceCodeRoman-Light 14</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -1313,7 +1322,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-11-19T00:36:05Z</date>
+	<date>2019-06-07T00:47:42Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -1361,6 +1370,6 @@
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
 	<key>iTerm Version</key>
-	<string>3.2.6beta3</string>
+	<string>3.2.9</string>
 </dict>
 </plist>
