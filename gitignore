@@ -38,3 +38,6 @@ xcuserdata
 DerivedData
 *.xcuserstate
 
+# Dev sandboxes
+garretSandbox
+
