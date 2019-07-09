@@ -35,7 +35,7 @@ Plugin 'quramy/vim-js-pretty-template'      " Typescript template formatting
 Plugin 'robotvert/vim-nginx'                " Nginx config file syntax
 Plugin 'scrooloose/nerdtree'                " File browser/manager
 Plugin 'scrooloose/syntastic'               " Syntax checking
-Plugin 'shawncplus/phpcomplete.vim'         " Improved PHP Omnicompletion
+Plugin 'lvht/phpcd.vim'                     " Improved PHP Omnicompletion
 Plugin 'StanAngeloff/php.vim'               " Improved PHP syntax highlighting
 Plugin 'stephpy/vim-php-cs-fixer'           " PHP code style fixer
 Plugin 'tmhedberg/matchit'                  " Matching tags
