@@ -123,6 +123,9 @@ endif
 " Interactively search tag under cursor
 map <silent> <leader>jd :CtrlPTag<cr><C-\>w
 
+" Show buffers interactively
+nnoremap <tab> :CtrlPBuffer<cr>
+
 let g:ctrlp_lazy_update = 1
 let g:ctrlp_extensions = ['tag', 'buffertag']
 let g:ctrlp_custom_ignore = {
