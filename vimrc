@@ -67,8 +67,8 @@ set expandtab               " Tabs as spaces
 set softtabstop=4           " Colums of tabs in insert mode
 set shiftwidth=4            " Columns to indent by
 set shiftround              " Always align indents to shift width
-set timeoutlen=500          " Short timeouts
-set ttimeoutlen=50          " Quickly change modes
+set timeoutlen=750          " Short timeouts
+set ttimeoutlen=100         " Quickly change modes
 set encoding=utf-8          " Default encoding
 set lazyredraw              " Don't redraw while executing macros
 set autoindent              " Auto indent
