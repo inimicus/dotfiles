@@ -22,6 +22,7 @@ Plugin 'evidens/vim-twig'                   " Twig syntax mode
 Plugin 'fatih/vim-go'                       " Go development plugin
 Plugin 'fidian/hexmode'                     " View/edit hex files
 Plugin 'groenewege/vim-less'                " Less syntax mode
+Plugin 'honza/vim-snippets'                 " Collection of snippets
 Plugin 'elzr/vim-json'                      " JSON badassery
 Plugin 'jiangmiao/auto-pairs'               " Smart bracket/parents/quotes
 Plugin 'jremmen/vim-ripgrep'                " Search file contents via rg inside vim
@@ -35,6 +36,7 @@ Plugin 'quramy/vim-js-pretty-template'      " Typescript template formatting
 Plugin 'robotvert/vim-nginx'                " Nginx config file syntax
 Plugin 'scrooloose/nerdtree'                " File browser/manager
 Plugin 'scrooloose/syntastic'               " Syntax checking
+Plugin 'SirVer/ultisnips'                   " Advanced snippets
 Plugin 'lvht/phpcd.vim'                     " Improved PHP Omnicompletion
 Plugin 'StanAngeloff/php.vim'               " Improved PHP syntax highlighting
 Plugin 'stephpy/vim-php-cs-fixer'           " PHP code style fixer

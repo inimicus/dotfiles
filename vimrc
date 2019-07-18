@@ -174,6 +174,14 @@ let g:tagbar_compact = 1
 command TT TagbarToggle
 
 " ------------------------------------------------------------------------------
+" UltiSnips
+" ------------------------------------------------------------------------------
+let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsExpandTrigger = '<C-j>'
+let g:UltiSnipsJumpForwardTrigger = '<C-j>'
+let g:UltiSnipsJumpBackwardTrigger = '<C-k>'
+
+" ------------------------------------------------------------------------------
 " NERDTree
 " ------------------------------------------------------------------------------
 let g:NERDTreeMinimalUI = 1
