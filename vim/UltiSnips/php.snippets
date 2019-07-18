@@ -1,0 +1,73 @@
+priority -50
+
+global !p
+import vim
+
+def isPHPScalarTypesEnabled():
+    isEnabled = vim.eval("get(g:, 'ultisnips_php_scalar_types', 0)") == "1"
+    return isEnabled or re.match('<\?php\s+declare\(strict_types=[01]\);', '\n'.join(vim.current.window.buffer))
+endglobal
+
+## Modified from
+## https://raw.githubusercontent.com/honza/vim-snippets/master/UltiSnips/php.snippets
+
+snippet igetter "Intelisys: PHP Class Getter" b
+/**********************************************
+ * Getter for $1
+ * ----------
+ * RETURN
+ * (${2:string})    ${3:Description}
+ **********************************************/
+public function get${1/\w+\s*/\u$0/}()`!p snip.rv = ': '+t[2] if isPHPScalarTypesEnabled() else ''`
+{
+    return $this->$1;
+}
+endsnippet
+
+snippet isetter "Intelisys: PHP Class Setter" b
+/**********************************************
+ * Setter for $1
+ * ----------
+ * PARAMETERS
+ * $1:    (${2:string})    ${3:Description}
+ * ----------
+ * RETURN
+ * (${4:`!p snip.rv=snip.basename`})
+ **********************************************/
+public function set${1/\w+\s*/\u$0/}(${5:${2/(void|string|int|integer|double|float|object|boolear|null|mixed|number|resource)|(.*)/(?1::$2 )/}}$$1)
+{
+    $this->$1 = $$1;
+
+    ${6:return $this;}
+}
+endsnippet
+
+snippet ifunction "Intelisys: Function with docs" b
+/**********************************************
+ * $2
+ * ${4:Function Description}
+ * ----------
+ * PARAMETERS${3/\w* ?\$(\w+)(, )*/\n     * $1:/g}
+ * ----------
+ * RETURN
+ * (${5:void})
+ **********************************************/
+${1:public} function ${2:name}(${3:$param})
+{
+    ${VISUAL}${6:return null;}
+}
+$0
+endsnippet
+
+snippet iconstruct "Intelisys: Constructor" b
+/**********************************************
+ * __construct
+ * ----------
+ * PARAMETERS${1/\w* ?\$(\w+)(, )*/\n     * $1:/g}
+ **********************************************/
+public function __construct(${1:$dependencies})
+{${1/\w* ?\$(\w+)(, )*/\n        $this->$1 = $$1;/g}
+}
+$0
+endsnippet
+
