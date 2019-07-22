@@ -217,7 +217,11 @@ let g:syntastic_typescript_checkers = ['tsuquyomi']
 " ------------------------------------------------------------------------------
 " vim-php-cs-fixer
 " ------------------------------------------------------------------------------
-let g:php_cs_fixer_rules = "@Symfony"
+let g:php_cs_fixer_rules = '{
+            \ "@Symfony": true,
+            \ "concat_space": {"spacing": "one"},
+            \ "single_quote": false
+            \ }'
 
 " ------------------------------------------------------------------------------
 " vim-go
