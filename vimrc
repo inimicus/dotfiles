@@ -181,7 +181,7 @@ let php_noShortTags = 1             " Disable PHP short tags.
 " YouCompleteMe
 " ------------------------------------------------------------------------------
 "let g:loaded_youcompleteme = 1
-set completeopt-=preview    " Don't show preview pane when completing
+set completeopt-=preview            " Don't show preview pane when completing
 let g:ycm_key_list_select_completion = ['<TAB>', '<Down>', '<Enter>']
 let g:ycm_min_num_of_chars_for_completion = 2
 let g:ycm_add_preview_to_completeopt = 0
