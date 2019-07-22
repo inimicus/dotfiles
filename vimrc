@@ -171,13 +171,6 @@ autocmd FileType php
 \| let b:phpfold_text_percent = 0
 
 " ------------------------------------------------------------------------------
-" PHP-Specific
-" ------------------------------------------------------------------------------
-let php_htmlInStrings = 1           " Syntax highlight HTML code inside PHP strings.
-let php_sql_query = 1               " Syntax highlight SQL code inside PHP strings.
-let php_noShortTags = 1             " Disable PHP short tags.
-
-" ------------------------------------------------------------------------------
 " YouCompleteMe
 " ------------------------------------------------------------------------------
 "let g:loaded_youcompleteme = 1
