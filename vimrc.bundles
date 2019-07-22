@@ -37,6 +37,7 @@ Plugin 'robotvert/vim-nginx'                " Nginx config file syntax
 Plugin 'scrooloose/nerdtree'                " File browser/manager
 Plugin 'scrooloose/syntastic'               " Syntax checking
 Plugin 'SirVer/ultisnips'                   " Advanced snippets
+Plugin 'swekaj/php-foldexpr.vim'            " Better PHP Folding
 Plugin 'lvht/phpcd.vim'                     " Improved PHP Omnicompletion
 Plugin 'StanAngeloff/php.vim'               " Improved PHP syntax highlighting
 Plugin 'stephpy/vim-php-cs-fixer'           " PHP code style fixer

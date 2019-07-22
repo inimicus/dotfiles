@@ -156,6 +156,28 @@ let g:gutentags_ctags_exclude = ['*.css', '*.html', '*.json', '*.xml',
                                 \ '*var/cache*', '*var/log*']
 
 " ------------------------------------------------------------------------------
+" php-foldexpr
+" ------------------------------------------------------------------------------
+autocmd FileType php 
+\ let b:phpfold_use = 1
+\| let b:phpfold_group_iftry = 1
+\| let b:phpfold_group_args = 1
+\| let b:phpfold_group_case = 1
+\| let b:phpfold_heredocs = 0
+\| let b:phpfold_docblocks = 0
+\| let b:phpfold_doc_with_funcs = 0
+\| let b:phpfold_text = 1
+\| let b:phpfold_text_right_lines = 1
+\| let b:phpfold_text_percent = 0
+
+" ------------------------------------------------------------------------------
+" PHP-Specific
+" ------------------------------------------------------------------------------
+let php_htmlInStrings = 1           " Syntax highlight HTML code inside PHP strings.
+let php_sql_query = 1               " Syntax highlight SQL code inside PHP strings.
+let php_noShortTags = 1             " Disable PHP short tags.
+
+" ------------------------------------------------------------------------------
 " YouCompleteMe
 " ------------------------------------------------------------------------------
 "let g:loaded_youcompleteme = 1
