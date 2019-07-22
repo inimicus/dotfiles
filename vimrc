@@ -265,7 +265,7 @@ if !exists('g:airline_symbols')
 endif
 
 " Lightning bolt misbehaving (⚡)
-let g:airline_symbols.dirty=' ⚙'
+"let g:airline_symbols.dirty=' ⚙'
 
 "let g:airline_section_b = '%{gutentags#statusline()}'
 " Customize Right Side Display
