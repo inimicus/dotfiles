@@ -16,7 +16,7 @@ snippet igetter "Intelisys: PHP Class Getter" b
  * Getter for $1
  * ----------
  * RETURN
- * (${2:string})    ${3:Description}
+ * (${2:string}) ${3:Description}
  **********************************************/
 public function get${1/\w+\s*/\u$0/}()`!p snip.rv = ': '+t[2] if isPHPScalarTypesEnabled() else ''`
 {
@@ -29,7 +29,7 @@ snippet isetter "Intelisys: PHP Class Setter" b
  * Setter for $1
  * ----------
  * PARAMETERS
- * $1:    (${2:string})    ${3:Description}
+ * $1 (${2:string}) ${3:Description}
  * ----------
  * RETURN
  * (${4:`!p snip.rv=snip.basename`})
@@ -47,7 +47,7 @@ snippet ifunction "Intelisys: Function with docs" b
  * $2
  * ${4:Function Description}
  * ----------
- * PARAMETERS${3/\w* ?\$(\w+)(, )*/\n     * $1:/g}
+ * PARAMETERS${3/\w* ?\$(\w+)(, )*/\n     * $1/g}
  * ----------
  * RETURN
  * (${5:void})
@@ -63,7 +63,7 @@ snippet iconstruct "Intelisys: Constructor" b
 /**********************************************
  * __construct
  * ----------
- * PARAMETERS${1/\w* ?\$(\w+)(, )*/\n     * $1:/g}
+ * PARAMETERS${1/\w* ?\$(\w+)(, )*/\n     * $1/g}
  **********************************************/
 public function __construct(${1:$dependencies})
 {${1/\w* ?\$(\w+)(, )*/\n        $this->$1 = $$1;/g}
