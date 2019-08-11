@@ -79,6 +79,10 @@ set t_vb=                   " ...then set it to nothing (off)
 set updatetime=250          " Shorten delay between updates
 set foldmethod=syntax       " Use syntax mode for folding
 set foldlevelstart=99       " Manually close folds
+if &diff
+    " Ignore whitespace in diff
+    set diffopt+=iwhite
+endif
 
 " ------------------------------------------------------------------------------
 " Searching
