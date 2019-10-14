@@ -24,6 +24,7 @@ Plugin 'fidian/hexmode'                     " View/edit hex files
 Plugin 'groenewege/vim-less'                " Less syntax mode
 Plugin 'honza/vim-snippets'                 " Collection of snippets
 Plugin 'elzr/vim-json'                      " JSON badassery
+Plugin 'jelera/vim-javascript-syntax'       " Improved JS syntax
 Plugin 'jiangmiao/auto-pairs'               " Smart bracket/parents/quotes
 Plugin 'jremmen/vim-ripgrep'                " Search file contents via rg inside vim
 Plugin 'keith/swift.vim'                    " Swift syntax
