@@ -162,21 +162,6 @@ let g:gutentags_ctags_exclude = ['*.css', '*.html', '*.json', '*.xml',
                                 \ '*var/cache*', '*var/log*']
 
 " ------------------------------------------------------------------------------
-" php-foldexpr
-" ------------------------------------------------------------------------------
-autocmd FileType php 
-\ let b:phpfold_use = 1
-\| let b:phpfold_group_iftry = 1
-\| let b:phpfold_group_args = 1
-\| let b:phpfold_group_case = 1
-\| let b:phpfold_heredocs = 0
-\| let b:phpfold_docblocks = 0
-\| let b:phpfold_doc_with_funcs = 0
-\| let b:phpfold_text = 1
-\| let b:phpfold_text_right_lines = 1
-\| let b:phpfold_text_percent = 0
-
-" ------------------------------------------------------------------------------
 " YouCompleteMe
 " ------------------------------------------------------------------------------
 "let g:loaded_youcompleteme = 1
