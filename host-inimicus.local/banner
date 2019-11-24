@@ -14,7 +14,7 @@ memUsed=$(printf %0.2f $[$pagesUsed*$pageSize/$megs])
 memTotal=$(printf %0.2f $[$(sysctl -n hw.memsize)/$megs])
 memPercent=$(printf %d $[$memUsed/$memTotal*100])
 
-rootVolume=$(df -H / | tail -n 1 | awk '{print $3 " of " $2 " (" $5 " Full)"}')
+rootVolume=$(df -H /System/Volumes/Data | tail -n 1 | awk '{print $3 " of " $2 " (" $5 " Full)"}')
 load=$(sysctl -n vm.loadavg | sed -nE 's/\{ | \}//gp')
 
 bold=`tput bold`
