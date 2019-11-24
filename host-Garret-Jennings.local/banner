@@ -46,19 +46,3 @@ echo
 echo "  ${white}${bold}==============================================================================="
 echo "${normal}"
 
-#echo "${yellow}${bold}"
-#echo "      \$\$\$\$\$${white}\\${yellow}                               \$\$${white}\\${yellow}"
-#echo "      ${white}\\__${yellow}\$\$ ${white}|                              \\__|${yellow}"
-#echo "         \$\$ ${white}|${yellow} \$\$\$\$\$\$${white}\\${yellow}  \$\$\$\$\$\$\$${white}\\${yellow}  \$\$\$\$\$\$\$${white}\\${yellow}  \$\$${white}\\${yellow} \$\$\$\$\$\$\$${white}\\${yellow}   \$\$\$\$\$\$${white}\\${yellow}   \$\$\$\$\$\$\$${white}\\${yellow}"
-#echo "         \$\$ ${white}|${yellow}\$\$  ${white}__${yellow}\$\$${white}\\${yellow} \$\$  ${white}__${yellow}\$\$${white}\\${yellow} \$\$  ${white}__${yellow}\$\$${white}\\${yellow} \$\$ ${white}|${yellow}\$\$  ${white}__${yellow}\$\$${white}\\${yellow} \$\$  ${white}__${yellow}\$\$${white}\\${yellow} \$\$  ${white}_____|${yellow}"
-#echo "   \$\$${white}\\${yellow}   \$\$ ${white}|${yellow}\$\$\$\$\$\$\$\$ ${white}|${yellow}\$\$ ${white}|${yellow}  \$\$ ${white}|${yellow}\$\$ ${white}|${yellow}  \$\$ ${white}|${yellow}\$\$ ${white}|${yellow}\$\$ ${white}|${yellow}  \$\$ ${white}|${yellow}\$\$ ${white}/${yellow}  \$\$ ${white}|\\${yellow}\$\$\$\$\$\$${white}\\${yellow}"
-#echo "   \$\$ ${white}|${yellow}  \$\$ ${white}|${yellow}\$\$   ${white}____|${yellow}\$\$ ${white}|${yellow}  \$\$ ${white}|${yellow}\$\$ ${white}|${yellow}  \$\$ ${white}|${yellow}\$\$ ${white}|${yellow}\$\$ ${white}|${yellow}  \$\$ ${white}|${yellow}\$\$ ${white}|${yellow}  \$\$ ${white}| \\____${yellow}\$\$${white}\\${yellow}"
-#echo "   ${white}\\${yellow}\$\$\$\$\$\$  ${white}|\\${yellow}\$\$\$\$\$\$\$${white}\\${yellow} \$\$ ${white}|${yellow}  \$\$ ${white}|${yellow}\$\$ ${white}|${yellow}  \$\$ ${white}|${yellow}\$\$ ${white}|${yellow}\$\$ ${white}|${yellow}  \$\$ ${white}|\\${yellow}\$\$\$\$\$\$\$ ${white}|${yellow}\$\$\$\$\$\$\$  ${white}|${yellow}"
-#echo "    ${white}\\______/  \\_______|\\__|  \\__|\\__|  \\__|\\__|\\__|  \\__| \\____${yellow}\$\$ ${white}|\\_______/${yellow}"
-#echo "                                                         \$\$${white}\\${yellow}   \$\$${white} |${yellow}"
-#echo "                                                         ${white}\\${yellow}\$\$\$\$\$\$  ${white}|"
-#echo "                                                          \______/${normal}"
-#echo
-#echo "${normal}${bold}################################################################################${normal}"
-#echo
-
