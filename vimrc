@@ -43,6 +43,7 @@ set numberwidth=5           " Line numbers up to 5 characters
 " ------------------------------------------------------------------------------
 " Visual
 " ------------------------------------------------------------------------------
+set splitbelow              " Horizontal windows split below
 set nowrap                  " No line wrapping
 set colorcolumn=80          " Column guide at 80 characters
 set noshowmode              " Don't show default mode indicator
@@ -165,7 +166,7 @@ let g:gutentags_ctags_exclude = ['*.css', '*.html', '*.json', '*.xml',
 " YouCompleteMe
 " ------------------------------------------------------------------------------
 "let g:loaded_youcompleteme = 1
-set completeopt-=preview            " Don't show preview pane when completing
+" set completeopt-=preview            " Don't show preview pane when completing
 let g:ycm_key_list_select_completion = ['<TAB>', '<Down>', '<Enter>']
 let g:ycm_min_num_of_chars_for_completion = 2
 let g:ycm_add_preview_to_completeopt = 0
