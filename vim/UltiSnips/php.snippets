@@ -13,7 +13,8 @@ endglobal
 
 snippet igetter "Intelisys: PHP Class Getter" b
 /**********************************************
- * Getter for $1
+ * set${1/\w+\s*/\u$0/}
+ * Getter for ${1:variable}.
  * ----------
  * RETURN
  * (${2:string}) ${3:Description}
@@ -26,15 +27,16 @@ endsnippet
 
 snippet isetter "Intelisys: PHP Class Setter" b
 /**********************************************
- * Setter for $1
+ * set${1/\w+\s*/\u$0/}
+ * Setter for ${1:variable}.
  * ----------
  * PARAMETERS
  * $1 (${2:string}) ${3:Description}
  * ----------
  * RETURN
- * (${4:`!p snip.rv=snip.basename`})
+ * ${4:`!p snip.rv=snip.basename`}
  **********************************************/
-public function set${1/\w+\s*/\u$0/}(${5:${2/(void|string|int|integer|double|float|object|boolear|null|mixed|number|resource)|(.*)/(?1::$2 )/}}$$1)
+public function set${1/\w+\s*/\u$0/}(${5:${2/(void|string|int|integer|double|float|object|boolean|null|mixed|number|resource)|(.*)/(?1:$1 :)/}}$$1)`!p snip.rv = ': '+t[4] if snip.basename != t[4] else ''`
 {
     $this->$1 = $$1;
 
