@@ -11,6 +11,16 @@ endglobal
 ## Modified from
 ## https://raw.githubusercontent.com/honza/vim-snippets/master/UltiSnips/php.snippets
 
+snippet dda "Dump and Die: Array" b
+dd([
+	'${1:name}' => $${2:value},
+], ${0:true});
+endsnippet
+
+snippet ddc "Dump and Die: Continue" b
+dd(${1:$varName}, ${0:true});
+endsnippet
+
 snippet igetter "Intelisys: PHP Class Getter" b
 /**********************************************
  * set${1/\w+\s*/\u$0/}
