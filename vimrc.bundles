@@ -36,7 +36,6 @@ Plugin 'quramy/tsuquyomi'                   " Typescript features
 Plugin 'quramy/vim-js-pretty-template'      " Typescript template formatting
 Plugin 'robotvert/vim-nginx'                " Nginx config file syntax
 Plugin 'scrooloose/nerdtree'                " File browser/manager
-Plugin 'scrooloose/syntastic'               " Syntax checking
 Plugin 'SirVer/ultisnips'                   " Advanced snippets
 Plugin 'lvht/phpcd.vim'                     " Improved PHP Omnicompletion
 Plugin 'StanAngeloff/php.vim'               " Improved PHP syntax highlighting
@@ -52,6 +51,7 @@ Plugin 'vim-airline/vim-airline-themes'     " Airline themes
 Plugin 'xolox/vim-lua-ftplugin'             " Lua syntax
 Plugin 'xolox/vim-misc'                     " Dependency for vim-lua-ftplugin
 Plugin 'AndrewRadev/splitjoin.vim'          " Multi-line/single-line conversion
+Plugin 'dense-analysis/ale'                 " Linting
 Plugin 'Yggdroot/indentLine'                " Thin indent lines
 
 " ------------------------------------------------------------------------------

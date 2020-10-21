@@ -114,6 +114,28 @@ set bsdir=last              " Last working directory is default working director
 " ==============================================================================
 
 " ------------------------------------------------------------------------------
+" ALE
+" ------------------------------------------------------------------------------
+" Move between warnings or errors with ALENext and ALEPrevious
+nmap <silent> <leader>aj :ALENext<cr>
+nmap <silent> <leader>ak :ALEPrevious<cr>
+" ALEFix will format the file in place
+nmap <silent> <leader>af :ALEFix<cr>
+
+let g:airline#extensions#ale#enabled = 1
+" let g:ale_linters_explicit = 1
+let g:ale_fixers = {
+\   'javascript': ['eslint', 'prettier'],
+\   'php': ['php_cs_fixer'],
+\   'css': ['prettier'],
+\}
+highlight ALEWarning ctermfg=5 cterm=bold,underline
+highlight ALEError ctermfg=1 cterm=bold,underline
+let g:ale_sign_error = '●'      " Less aggressive than the default '>>'
+let g:ale_sign_warning = '•'
+let g:ale_lint_on_enter = 0     " Less distracting when opening a new file
+
+" ------------------------------------------------------------------------------
 " Commentary
 " ------------------------------------------------------------------------------
 autocmd FileType php setlocal commentstring=//\ %s  " PHP comments as //
@@ -231,7 +253,7 @@ let g:NERDTreeMinimalUI = 1
 " Tsuquyomi
 " ------------------------------------------------------------------------------
 let g:tsuquyomi_disable_quickfix = 1
-let g:syntastic_typescript_checkers = ['tsuquyomi']
+"let g:syntastic_typescript_checkers = ['tsuquyomi']
 
 " ------------------------------------------------------------------------------
 " vim-php-cs-fixer
@@ -311,7 +333,6 @@ let g:indentLine_color_term = 18
 let g:airline_theme='base16'                    " Force theme
 let g:airline_powerline_fonts = 1               " Use powerline fonts
 let g:airline_skip_empty_sections = 1           " Don't show empty sections
-let g:airline#extensions#syntastic#enabled = 1  " Integrate Syntastic
 let g:airline#extensions#branch#displayed_head_limit = 15   " Limit branch length
 
 " Change symbols behaving badly
