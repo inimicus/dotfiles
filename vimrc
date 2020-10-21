@@ -180,10 +180,12 @@ let g:gutentags_ctags_exclude = [ '*.git', '*.svg', '*.hg', 'dist',
 " YouCompleteMe
 " ------------------------------------------------------------------------------
 "let g:loaded_youcompleteme = 1
-" set completeopt-=preview            " Don't show preview pane when completing
-let g:ycm_key_list_select_completion = ['<TAB>', '<Down>', '<Enter>']
+set completeopt+=popup              " Show preview in popup
+let g:ycm_key_list_select_completion = ['<TAB>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<S-TAB>', '<Up>']
 let g:ycm_min_num_of_chars_for_completion = 2
 let g:ycm_add_preview_to_completeopt = 0
+let g:ycm_key_list_stop_completion = ['<C-y>', '<Enter>']
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_confirm_extra_conf = 0
@@ -200,6 +202,9 @@ let g:ycm_filetype_blacklist = {
       \ 'infolog': 1,
       \ 'mail': 1
       \}
+let g:ycm_auto_hover = ''           " Disable auto popup
+" Instead, show popup on demand
+nmap <leader>k <plug>(YCMHover)
 
 " ------------------------------------------------------------------------------
 " Tagbar
