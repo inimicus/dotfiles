@@ -52,7 +52,7 @@ Plugin 'vim-airline/vim-airline-themes'     " Airline themes
 Plugin 'xolox/vim-lua-ftplugin'             " Lua syntax
 Plugin 'xolox/vim-misc'                     " Dependency for vim-lua-ftplugin
 Plugin 'AndrewRadev/splitjoin.vim'          " Multi-line/single-line conversion
-
+Plugin 'Yggdroot/indentLine'                " Thin indent lines
 
 " ------------------------------------------------------------------------------
 " Local Plugins

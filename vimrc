@@ -259,30 +259,38 @@ let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 
 " ------------------------------------------------------------------------------
+" vim-javascript
+" ------------------------------------------------------------------------------
+let g:javascript_plugin_jsdoc = 1
+
+" ------------------------------------------------------------------------------
 " Indent Guides
 " ------------------------------------------------------------------------------
-autocmd VimEnter * call s:CheckTabStyle()       " This might be overkill...
-autocmd WinEnter * call s:CheckTabStyle()       " But we'll see how it
-autocmd BufReadPost * call s:CheckTabStyle()    " handles multiple buffers
+let g:indentLine_char = '│'
+let g:indentLine_color_term = 18
+
+"autocmd VimEnter * call s:CheckTabStyle()       " This might be overkill...
+"autocmd WinEnter * call s:CheckTabStyle()       " But we'll see how it
+"autocmd BufReadPost * call s:CheckTabStyle()    " handles multiple buffers
 
 " Use different indent guides based on indent style
-function! s:CheckTabStyle()
-    if &expandtab
-                                                " For tabs as spaces
-        :IndentGuidesEnable                     " Use IndentGuides plugin
-        highlight IndentGuidesOdd  ctermbg=18   " Gray
-        highlight IndentGuidesEven ctermbg=18   " Gray
-        let g:indent_guides_guide_size = 1      " Skinny guides
-        let g:indent_guides_auto_colors = 0     " Use above forced colors
-        let g:indent_guides_start_level = 2     " Only show after second indent
-    else
-                                                " For tabs as tabs
-        :IndentGuidesDisable                    " Turn off IndentGuides plugin
-        set list lcs=tab:│\                     " Mind the space
-        highlight FirstIndent  ctermfg=0        " First indent hidden
-        highlight OtherIndents ctermfg=19       " Gray
-        let w:m1=matchadd('FirstIndent', '^\t', -1)
-        let w:m2=matchadd('OtherIndents', '\(^\t\)\@!\t', -1)
+" function! s:CheckTabStyle()
+"     if &expandtab
+"                                                 " For tabs as spaces
+"         :IndentGuidesEnable                     " Use IndentGuides plugin
+"         highlight IndentGuidesOdd  ctermbg=18   " Gray
+"         highlight IndentGuidesEven ctermbg=18   " Gray
+"         let g:indent_guides_guide_size = 1      " Skinny guides
+"         let g:indent_guides_auto_colors = 0     " Use above forced colors
+"         let g:indent_guides_start_level = 2     " Only show after second indent
+"     else
+"                                                 " For tabs as tabs
+"         :IndentGuidesDisable                    " Turn off IndentGuides plugin
+"         set list lcs=tab:│\                     " Mind the space
+"         highlight FirstIndent  ctermfg=0        " First indent hidden
+"         highlight OtherIndents ctermfg=19       " Gray
+"         let w:m1=matchadd('FirstIndent', '^\t', -1)
+"         let w:m2=matchadd('OtherIndents', '\(^\t\)\@!\t', -1)
 
         " Other methods for persistence?
         "autocmd VimEnter * autocmd WinEnter * let w:created=1
@@ -293,8 +301,8 @@ function! s:CheckTabStyle()
         "autocmd WinEnter * if !exists('w:created') |
         "   \ let w:m2=matchadd('OtherIndents', '\(^\t\)\@!\t', -1) |
         "   \ endif
-    endif
-endfunction
+    " endif
+" endfunction
 
 
 " ------------------------------------------------------------------------------
