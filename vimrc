@@ -16,8 +16,12 @@ let mapleader="\<space>"    " Take me to space, I wanna go to space!
 " ------------------------------------------------------------------------------
 " Reload vimrc
 nmap <silent> <leader>vrc :so $MYVIMRC<cr>
+
 " Get commit history of current buffer
 command History !git --no-pager log --topo-order '--date=short' '--pretty=format:\%C(blue)\%ad\%C(reset) \%C(green)\%h\%C(reset)\%<|(38) \%aN :: \%s\%C(red)\%d\%C(reset)' -- %
+
+" Compare branches
+command! -bang -nargs=? -range=-1 -complete=customlist,fugitive#MergeComplete Gcompare exe fugitive#Command(<line1>, <count>, +"<range>", <bang>0, "<mods>", "difftool -y <args>")
 
 " ------------------------------------------------------------------------------
 " Command Menu
