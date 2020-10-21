@@ -42,6 +42,7 @@ colorscheme base16-tomorrow " Colorscheme
 " Line Numbers
 " ------------------------------------------------------------------------------
 set number                  " Show line numbers
+set rnu                     " Use relative line numbers
 set numberwidth=5           " Line numbers up to 5 characters
 
 " ------------------------------------------------------------------------------
