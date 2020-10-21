@@ -99,10 +99,6 @@ set ignorecase              " Ignore case when searching
 set smartcase               " Ignore above setting if pattern contains uppercase
 set hlsearch                " Highlight search results
 set incsearch               " Dynamically as typed
-" Normal mode search text under cursor
-nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
-" Visual mode search text selection
-vnoremap K y:grep! "\b<C-R>"\b"<CR>:cw<CR>
 
 " ------------------------------------------------------------------------------
 " File Handling
