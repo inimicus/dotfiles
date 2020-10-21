@@ -335,15 +335,6 @@ let g:airline_powerline_fonts = 1               " Use powerline fonts
 let g:airline_skip_empty_sections = 1           " Don't show empty sections
 let g:airline#extensions#branch#displayed_head_limit = 15   " Limit branch length
 
-" Change symbols behaving badly
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
-
-" Lightning bolt misbehaving (⚡)
-"let g:airline_symbols.dirty=' ⚙'
-
-"let g:airline_section_b = '%{gutentags#statusline()}'
 " Customize Right Side Display
 let g:airline_section_x = ''
 let g:airline_section_y = '%{airline#util#wrap(airline#parts#filetype(),0)}'
