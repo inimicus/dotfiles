@@ -240,7 +240,8 @@ let g:php_cs_fixer_rules = '{
             \ "@Symfony": true,
             \ "concat_space": {"spacing": "one"},
             \ "single_quote": false,
-            \ "no_break_comment": {"comment_text": "No break"}
+            \ "no_break_comment": {"comment_text": "No break"},
+            \ "yoda_style": {"less_and_greater": false}
             \ }'
 
 " ------------------------------------------------------------------------------
