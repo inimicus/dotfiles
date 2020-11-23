@@ -128,6 +128,8 @@ let g:ale_fixers = {
 \   'javascript': ['eslint', 'prettier'],
 \   'php': ['php_cs_fixer'],
 \   'css': ['prettier'],
+\   'scss': ['prettier'],
+\   'sass': ['prettier'],
 \}
 highlight ALEWarning ctermfg=5 cterm=bold,underline
 highlight ALEError ctermfg=1 cterm=bold,underline
