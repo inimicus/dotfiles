@@ -39,7 +39,6 @@ Plugin 'scrooloose/nerdtree'                " File browser/manager
 Plugin 'SirVer/ultisnips'                   " Advanced snippets
 Plugin 'lvht/phpcd.vim'                     " Improved PHP Omnicompletion
 Plugin 'StanAngeloff/php.vim'               " Improved PHP syntax highlighting
-Plugin 'stephpy/vim-php-cs-fixer'           " PHP code style fixer
 Plugin 'tmhedberg/matchit'                  " Matching tags
 Plugin 'tpope/vim-commentary'               " Better comments
 Plugin 'tpope/vim-fugitive'                 " Git plugin

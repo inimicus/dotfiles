@@ -137,6 +137,14 @@ let g:ale_sign_error = '●'      " Less aggressive than the default '>>'
 let g:ale_sign_warning = '•'
 let g:ale_lint_on_enter = 0     " Less distracting when opening a new file
 
+let g:ale_php_cs_fixer_options = '--rules=''{
+            \ "@Symfony": true,
+            \ "concat_space": {"spacing": "one"},
+            \ "single_quote": false,
+            \ "no_break_comment": {"comment_text": "No break"},
+            \ "yoda_style": {"less_and_greater": false}
+            \ }'''
+
 " ------------------------------------------------------------------------------
 " Commentary
 " ------------------------------------------------------------------------------
@@ -256,17 +264,6 @@ let g:NERDTreeMinimalUI = 1
 " ------------------------------------------------------------------------------
 let g:tsuquyomi_disable_quickfix = 1
 "let g:syntastic_typescript_checkers = ['tsuquyomi']
-
-" ------------------------------------------------------------------------------
-" vim-php-cs-fixer
-" ------------------------------------------------------------------------------
-let g:php_cs_fixer_rules = '{
-            \ "@Symfony": true,
-            \ "concat_space": {"spacing": "one"},
-            \ "single_quote": false,
-            \ "no_break_comment": {"comment_text": "No break"},
-            \ "yoda_style": {"less_and_greater": false}
-            \ }'
 
 " ------------------------------------------------------------------------------
 " vim-go
