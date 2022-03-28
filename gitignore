@@ -43,6 +43,7 @@ garretSandbox
 
 # php-cs-fixer cache
 .php_cs.cache
+.php-cs-fixer.cache
 
 # phpcd index
 .phpcd
