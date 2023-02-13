@@ -23,6 +23,6 @@
 [diff]
 	tool = neovim
 [mergetool "neovim"]
-	cmd = nvim -d -c \"wincmd l\" \"$LOCAL\" \"$MERGED\" \"$REMOTE\"
+	cmd = nvim +DiffviewOpen
 [difftool "neovim"]
-	cmd = nvim -d -c \"wincmd l\" \"$LOCAL\" \"$MERGED\" \"$REMOTE\"
+	cmd = nvim +DiffviewOpen
